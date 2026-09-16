@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#f7f8fd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <rect width="240" height="240" fill="#f7f8fd"/>
+  <rect x="72" y="60" width="96" height="120" rx="8" fill="#ffffff" stroke="#6255b0" stroke-width="3"/>
+  <rect x="90" y="86" width="60" height="6" rx="3" fill="#6255b0"/>
+  <rect x="90" y="104" width="44" height="6" rx="3" fill="#b5abfc"/>
+  <rect x="90" y="122" width="60" height="6" rx="3" fill="#b5abfc"/>
+  <rect x="90" y="140" width="34" height="6" rx="3" fill="#b5abfc"/>
+  <circle cx="120" cy="196" r="7" fill="#6255b0"/>
+</svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-917fe29e-d065-4294-b674-06348cbefec4/styles.css">
+<script src="_ds/nocturne-917fe29e-d065-4294-b674-06348cbefec4/_ds_bundle.js"></script>
+<script src="data/fatwas.js"></script>
+<script src="data/extra.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam:wght@400;500;600&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<style>
+  :root {
+    --color-bg: #262a3a;
+    --color-surface: #2f3446;
+    --color-text: #eeedf5;
+    --color-divider: color-mix(in srgb, #eeedf5 16%, transparent);
+    --color-neutral-100: #f7f7fb;
+    --color-neutral-200: #e2e2ec;
+    --color-neutral-300: #cfd0dd;
+    --color-neutral-400: #b0b2c4;
+    --color-neutral-500: #9a9cb0;
+    --color-neutral-600: #83869c;
+    --color-neutral-700: #6b6e85;
+    --color-neutral-800: #3d4256;
+    --color-neutral-900: #313648;
+    --color-accent: #9184d9;
+    --color-accent-100: #f3f1fd;
+    --color-accent-200: #ddd7fa;
+    --color-accent-300: #c4bbf3;
+    --color-accent-400: #ada2ea;
+    --color-accent-500: #9184d9;
+    --color-accent-600: #7466c2;
+    --color-accent-700: #574a95;
+    --color-accent-800: #3f3670;
+    --color-accent-900: #2e2853;
+    --grad-top: #333855;
+  }
+  :root[data-theme="light"] {
+    --color-bg: #f7f8fd;
+    --color-surface: #ffffff;
+    --color-text: #1c1e2b;
+    --color-divider: color-mix(in srgb, #1c1e2b 14%, transparent);
+    --color-neutral-100: #1c1e2b;
+    --color-neutral-200: #292b31;
+    --color-neutral-300: #3f424d;
+    --color-neutral-400: #4c5060;
+    --color-neutral-500: #565a6a;
+    --color-neutral-600: #616574;
+    --color-neutral-700: #6b6f7e;
+    --color-neutral-800: #e4e7f5;
+    --color-neutral-900: #f3f5fe;
+    --color-accent: #6255b0;
+    --color-accent-100: #2b2741;
+    --color-accent-200: #423a6a;
+    --color-accent-300: #5d5294;
+    --color-accent-400: #574c8c;
+    --color-accent-500: #6d61a8;
+    --color-accent-600: #b5abfc;
+    --color-accent-700: #d2cefd;
+    --color-accent-800: #e7e5fe;
+    --color-accent-900: #f5f4ff;
+    --grad-top: #eceaf9;
+  }
+  body { margin: 0; background: var(--color-bg); font-family: "Manjari", "Noto Serif Malayalam", system-ui, sans-serif; }
+  a { color: var(--color-accent-300); text-decoration: none; }
+  a:hover { color: var(--color-accent-200); }
+  ::selection { background: var(--color-accent-800); }
+  input:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; background: radial-gradient(1100px 480px at 10% -12%, var(--grad-top) 0%, var(--color-bg) 62%); color: var(--color-text); padding-bottom: 90px">
+
+  <header style="padding: 15px clamp(18px, 4vw, 40px); border-bottom: 1px solid var(--color-divider)">
+    <div style="max-width: 1180px; margin: 0 auto; display: flex; align-items: center; gap: 16px; flex-wrap: wrap">
+    <div onClick="{{ goHome }}" style="flex: none; display: flex; align-items: baseline; gap: 11px; cursor: pointer">
+      <span style="font-family: 'Noto Serif Malayalam', serif; font-size: 22px; font-weight: 600; letter-spacing: 0.2px; line-height: 1.55; white-space: nowrap">ഫത്‌വാ ശേഖരം</span>
+      <span style="font-size: 12.5px; color: var(--color-neutral-500); font-family: Inter, sans-serif; letter-spacing: 0.04em; white-space: nowrap">CALL TO ALLAH</span>
+    </div>
+    <nav style="display: flex; gap: 2px; margin-left: auto">
+      <button onClick="{{ goHome }}" style="background: none; border: 0; color: {{ navHomeColor }}; font-family: inherit; font-size: 15px; padding: 8px 12px; border-radius: var(--radius-sm); cursor: pointer" style-hover="background: var(--color-neutral-900)">Home</button>
+      <button onClick="{{ goSubjects }}" style="background: none; border: 0; color: {{ navSubjColor }}; font-family: inherit; font-size: 15px; padding: 8px 12px; border-radius: var(--radius-sm); cursor: pointer" style-hover="background: var(--color-neutral-900)">Subjects</button>
+      <button onClick="{{ goIndex }}" style="background: none; border: 0; color: {{ navIndexColor }}; font-family: inherit; font-size: 15px; padding: 8px 12px; border-radius: var(--radius-sm); cursor: pointer" style-hover="background: var(--color-neutral-900)">Index</button>
+      <button onClick="{{ goSaved }}" style="background: none; border: 0; color: {{ navSavedColor }}; font-family: inherit; font-size: 15px; padding: 8px 12px; border-radius: var(--radius-sm); cursor: pointer" style-hover="background: var(--color-neutral-900)">Saved {{ savedCountLabel }}</button>
+      <button onClick="{{ toggleTheme }}" title="{{ themeTitle }}" style="background: none; border: 1px solid var(--color-neutral-800); color: var(--color-neutral-300); font-family: inherit; font-size: 14px; padding: 7px 13px; margin-left: 6px; border-radius: var(--radius-sm); cursor: pointer" style-hover="border-color: var(--color-accent-600); color: var(--color-accent-300)">{{ themeLabel }}</button>
+    </nav>
+    </div>
+  </header>
+
+  <!-- HOME -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 40px)">
+    <section style="padding: clamp(38px, 7vw, 66px) 0 34px; display: flex; flex-wrap: wrap; gap: clamp(30px, 5vw, 56px); align-items: center">
+      <div style="flex: 4 1 420px; min-width: 0">
+      <p style="margin: 0 0 14px; font-size: 12.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-400); font-family: Inter, sans-serif">Call to Allah · Fatwas</p>
+      <h1 style="margin: 0; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: clamp(29px, 5.4vw, 46px); line-height: 1.42; max-width: 26ch; text-wrap: pretty">സലഫി പണ്ഡിതന്മാരുടെ ഫത്‌വകൾ മലയാളത്തിൽ</h1>
+      <p style="margin: 20px 0 0; font-size: clamp(16px, 1.7vw, 18px); line-height: 1.9; color: var(--color-neutral-400); max-width: 58ch">Question, the scholar’s answer and a link to the Arabic original. Search in Malayalam, in English letters, or by fatwa number. {{ totalLabel }} in the archive.</p>
+
+      <div style="position: relative; margin: 32px 0 0; max-width: 620px">
+        <div style="display: flex; gap: 8px">
+          <input value="{{ query }}" onChange="{{ onQuery }}" onKeyDown="{{ onKey }}" placeholder="Search — വസ്വിയ്യത്ത്, niskaram, 878" style="flex: 1; min-width: 0; background: var(--color-neutral-900); border: 1px solid var(--color-neutral-800); border-radius: var(--radius-md); color: var(--color-text); font-family: inherit; font-size: 16px; padding: 14px 16px" />
+          <button onClick="{{ runSearch }}" class="btn btn-primary" style="font-family: inherit; font-size: 15px; padding: 0 22px; cursor: pointer">Search</button>
+        </div>
+        <sc-if value="{{ hasSuggestions }}" hint-placeholder-val="{{ false }}">
+        <ul style="position: absolute; z-index: 5; top: 60px; left: 0; right: 0; margin: 0; padding: 6px; list-style: none; background: var(--color-surface); border-radius: var(--radius-md); box-shadow: var(--shadow-md); display: flex; flex-direction: column">
+          <sc-for list="{{ suggestions }}" as="s" hint-placeholder-count="0">
+            <li onClick="{{ s.onOpen }}" style="padding: 10px 12px; border-radius: var(--radius-sm); cursor: pointer; font-size: 15px; display: flex; gap: 12px; align-items: baseline" style-hover="background: var(--color-neutral-900)">
+              <span style="font-size: 12px; color: var(--color-accent-400); font-family: Inter, sans-serif">{{ s.no }}</span>
+              <span style="color: var(--color-neutral-200); line-height: 1.5">{{ s.q }}</span>
+            </li>
+          </sc-for>
+        </ul>
+        </sc-if>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; align-items: center">
+        <span style="font-size: 13px; color: var(--color-neutral-600); margin-right: 4px">Collections</span>
+        <sc-for list="{{ collections }}" as="c" hint-placeholder-count="3">
+          <button onClick="{{ c.onOpen }}" class="tag tag-outline" style="font-family: inherit; font-size: 13px; cursor: pointer; background: none">{{ c.label }}</button>
+        </sc-for>
+      </div>
+      </div>
+
+      <div aria-hidden="true" style="flex: 2 1 250px; min-width: 0; max-width: 330px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 8px 0">
+        <div style="position: relative; align-self: stretch; border: 1px solid var(--color-accent-600); border-radius: var(--radius-md); background: linear-gradient(160deg, var(--color-accent-900) 0%, transparent 70%); padding: 22px 24px; display: flex; align-items: center; justify-content: center">
+          <span style="font-family: 'Noto Serif Malayalam', serif; font-size: clamp(48px, 9vw, 76px); line-height: 1; color: var(--color-accent-400); text-shadow: 0 0 38px var(--color-accent-800)">؟</span>
+          <span style="position: absolute; left: 26px; bottom: -11px; width: 22px; height: 22px; background: var(--color-bg); border-right: 1px solid var(--color-accent-600); border-bottom: 1px solid var(--color-accent-600); transform: rotate(45deg)"></span>
+        </div>
+        <div style="position: relative; width: 74%; margin-left: 18%; border: 1px solid var(--color-accent-700); border-radius: var(--radius-md); padding: 15px 18px; display: flex; align-items: center; justify-content: center; opacity: 0.9">
+          <span style="font-family: 'Noto Serif Malayalam', serif; font-size: clamp(26px, 5vw, 40px); line-height: 1; color: var(--color-accent-500)">؟</span>
+          <span style="position: absolute; right: 22px; bottom: -9px; width: 18px; height: 18px; background: var(--color-bg); border-right: 1px solid var(--color-accent-700); border-bottom: 1px solid var(--color-accent-700); transform: rotate(45deg)"></span>
+        </div>
+        <div style="position: relative; width: 46%; margin-left: 6%; border: 1px solid var(--color-accent-700); border-radius: var(--radius-md); padding: 11px 14px; display: flex; align-items: center; justify-content: center; opacity: 0.65">
+          <span style="font-family: 'Noto Serif Malayalam', serif; font-size: clamp(17px, 3vw, 25px); line-height: 1; color: var(--color-accent-500)">؟</span>
+          <span style="position: absolute; left: 16px; bottom: -8px; width: 15px; height: 15px; background: var(--color-bg); border-right: 1px solid var(--color-accent-700); border-bottom: 1px solid var(--color-accent-700); transform: rotate(45deg)"></span>
+        </div>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-wrap: wrap; gap: clamp(30px, 4vw, 48px); padding: 24px 0 0; align-items: start">
+      <div style="flex: 3 1 340px; min-width: 0">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px">
+          <h2 style="margin: 0; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: 21px">Recently added</h2>
+          <button onClick="{{ showAll }}" style="background: none; border: 0; color: var(--color-accent-300); font-family: inherit; font-size: 14px; cursor: pointer">View all</button>
+        </div>
+        <div style="display: flex; flex-direction: column">
+          <sc-for list="{{ recent }}" as="f" hint-placeholder-count="5">
+            <article onClick="{{ f.onOpen }}" style="padding: 17px 0; border-top: 1px solid var(--color-divider); cursor: pointer" style-hover="background: linear-gradient(90deg, var(--color-neutral-900) 0%, transparent 92%)">
+              <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 7px">
+                <span style="font-family: Inter, sans-serif; font-size: 12px; color: var(--color-accent-400)">{{ f.no }}</span>
+                <span style="font-size: 12px; color: var(--color-neutral-600)">{{ f.subject }}</span>
+              </div>
+              <h3 style="margin: 0 0 7px; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: 18.5px; line-height: 1.68">{{ f.q }}</h3>
+              <p style="margin: 0; font-size: 14px; line-height: 1.7; color: var(--color-neutral-500)">{{ f.scholarShort }}</p>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+
+      <aside style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 26px">
+        <div>
+          <h2 style="margin: 0 0 12px; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: 18px">Chapters</h2>
+          <div style="display: flex; flex-direction: column">
+            <sc-for list="{{ chapterList }}" as="ch" hint-placeholder-count="5">
+              <button onClick="{{ ch.onOpen }}" style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; background: none; border: 0; border-bottom: 1px solid var(--color-divider); padding: 11px 2px; color: var(--color-neutral-200); font-family: inherit; font-size: 15px; text-align: left; cursor: pointer" style-hover="color: var(--color-accent-300)">
+                <span>{{ ch.name }}</span>
+                <span style="font-family: Inter, sans-serif; font-size: 12px; color: var(--color-neutral-600)">{{ ch.count }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <h2 style="margin: 0 0 12px; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: 18px">Scholars</h2>
+          <div style="display: flex; flex-direction: column">
+            <sc-for list="{{ scholarList }}" as="sc" hint-placeholder-count="4">
+              <button onClick="{{ sc.onPick }}" style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; background: none; border: 0; border-bottom: 1px solid var(--color-divider); padding: 11px 2px; color: var(--color-neutral-300); font-family: inherit; font-size: 14.5px; text-align: left; cursor: pointer" style-hover="color: var(--color-accent-300)">
+                <span>{{ sc.name }}</span>
+                <span style="font-family: Inter, sans-serif; font-size: 12px; color: var(--color-neutral-700)">{{ sc.count }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+  </sc-if>
+
+  <!-- RESULTS -->
+  <sc-if value="{{ isResults }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1180px; margin: 0 auto; padding: 32px clamp(18px, 4vw, 40px) 0">
+    <div style="display: flex; gap: 8px; max-width: 620px; margin-bottom: 28px">
+      <input value="{{ query }}" onChange="{{ onQuery }}" onKeyDown="{{ onKey }}" placeholder="Search" style="flex: 1; min-width: 0; background: var(--color-neutral-900); border: 1px solid var(--color-neutral-800); border-radius: var(--radius-md); color: var(--color-text); font-family: inherit; font-size: 15px; padding: 12px 14px" />
+      <button onClick="{{ runSearch }}" class="btn btn-primary" style="font-family: inherit; font-size: 15px; padding: 0 20px; cursor: pointer">Search</button>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: clamp(24px, 3.5vw, 44px); align-items: start">
+      <aside style="flex: 1 1 180px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+        <div>
+          <p style="margin: 0 0 8px; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); font-family: Inter, sans-serif">Subject</p>
+          <div style="display: flex; flex-direction: column">
+            <button onClick="{{ clearFilter }}" style="text-align: left; background: none; border: 0; padding: 7px 2px; font-family: inherit; font-size: 14.5px; color: {{ allFilterColor }}; cursor: pointer">All</button>
+            <sc-for list="{{ filterList }}" as="fl" hint-placeholder-count="5">
+              <button onClick="{{ fl.onPick }}" style="display: flex; justify-content: space-between; gap: 10px; text-align: left; background: none; border: 0; padding: 7px 2px; font-family: inherit; font-size: 14.5px; color: {{ fl.color }}; cursor: pointer">
+                <span>{{ fl.name }}</span>
+                <span style="font-family: Inter, sans-serif; font-size: 12px; color: var(--color-neutral-700)">{{ fl.count }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <p style="margin: 0 0 8px; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); font-family: Inter, sans-serif">Scholar</p>
+          <div style="display: flex; flex-direction: column">
+            <sc-for list="{{ scholarFilterList }}" as="sf" hint-placeholder-count="4">
+              <button onClick="{{ sf.onPick }}" style="display: flex; justify-content: space-between; gap: 10px; text-align: left; background: none; border: 0; padding: 7px 2px; font-family: inherit; font-size: 14px; color: {{ sf.color }}; cursor: pointer">
+                <span>{{ sf.name }}</span>
+                <span style="font-family: Inter, sans-serif; font-size: 12px; color: var(--color-neutral-700)">{{ sf.count }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </aside>
+
+      <section style="flex: 3 1 320px; min-width: 0">
+        <p style="margin: 0 0 18px; font-size: 14px; color: var(--color-neutral-500)">{{ resultLabel }}</p>
+        <div style="display: flex; flex-direction: column">
+          <sc-for list="{{ results }}" as="f" hint-placeholder-count="4">
+            <article onClick="{{ f.onOpen }}" style="padding: 17px 0; border-top: 1px solid var(--color-divider); cursor: pointer" style-hover="background: linear-gradient(90deg, var(--color-neutral-900) 0%, transparent 92%)">
+              <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 7px">
+                <span style="font-family: Inter, sans-serif; font-size: 12px; color: var(--color-accent-400)">{{ f.no }}</span>
+                <span style="font-size: 12px; color: var(--color-neutral-600)">{{ f.subject }}</span>
+              </div>
+              <h3 style="margin: 0 0 7px; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: 18.5px; line-height: 1.68">{{ f.q }}</h3>
+              <p style="margin: 0; font-size: 14px; line-height: 1.7; color: var(--color-neutral-500)">{{ f.scholarShort }}</p>
+            </article>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hasMore }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ loadMore }}" class="btn btn-secondary btn-block" style="margin-top: 22px; font-family: inherit; font-size: 15px; cursor: pointer">{{ moreLabel }}</button>
+        </sc-if>
+        <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 24px 0 0; font-size: 15px; line-height: 1.85; color: var(--color-neutral-500)">No fatwas match this search. Try browsing by subject.</p>
+        </sc-if>
+      </section>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- SUBJECTS -->
+  <sc-if value="{{ isSubjects }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1180px; margin: 0 auto; padding: 42px clamp(18px, 4vw, 40px) 0">
+    <h1 style="margin: 0 0 8px; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: clamp(26px, 4.6vw, 33px)">Subjects</h1>
+    <p style="margin: 0 0 34px; font-size: 15.5px; line-height: 1.8; color: var(--color-neutral-500); max-width: 50ch">Organised by chapter and sub-subject.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 18px">
+      <sc-for list="{{ chapterList }}" as="ch" hint-placeholder-count="5">
+        <div class="card elev-sm" style="padding: 22px; border-radius: var(--radius-lg)">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 12px">
+            <h2 style="margin: 0; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: 19px">{{ ch.name }}</h2>
+            <span style="font-family: Inter, sans-serif; font-size: 12px; color: var(--color-neutral-600)">{{ ch.count }}</span>
+          </div>
+          <div style="display: flex; flex-direction: column">
+            <sc-for list="{{ ch.subs }}" as="sb" hint-placeholder-count="2">
+              <button onClick="{{ sb.onPick }}" style="display: flex; justify-content: space-between; gap: 10px; background: none; border: 0; border-top: 1px solid var(--color-divider); padding: 10px 0; font-family: inherit; font-size: 14.5px; color: var(--color-neutral-300); text-align: left; cursor: pointer" style-hover="color: var(--color-accent-300)">
+                <span>{{ sb.name }}</span>
+                <span style="font-family: Inter, sans-serif; font-size: 12px; color: var(--color-neutral-700)">{{ sb.count }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- INDEX -->
+  <sc-if value="{{ isIndex }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1180px; margin: 0 auto; padding: 42px clamp(18px, 4vw, 40px) 0">
+    <h1 style="margin: 0 0 8px; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: clamp(26px, 4.6vw, 33px)">Fatwa index</h1>
+    <p style="margin: 0 0 22px; font-size: 15.5px; line-height: 1.8; color: var(--color-neutral-500); max-width: 62ch">Every fatwa by number. {{ indexCountLabel }}</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 26px">
+      <input value="{{ jumpVal }}" onChange="{{ onJump }}" onKeyDown="{{ onJumpKey }}" placeholder="Go to number" style="width: 170px; background: var(--color-neutral-900); border: 1px solid var(--color-neutral-800); border-radius: var(--radius-md); color: var(--color-text); font-family: inherit; font-size: 15px; padding: 11px 14px" />
+      <button onClick="{{ jumpGo }}" class="btn btn-primary" style="font-family: inherit; font-size: 15px; padding: 0 20px; cursor: pointer">Open</button>
+      <button onClick="{{ toggleIndexOrder }}" class="btn btn-ghost" style="font-family: inherit; font-size: 14.5px; cursor: pointer">{{ indexOrderLabel }}</button>
+      <span style="font-size: 13.5px; color: var(--color-neutral-500)">{{ jumpMsg }}</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 0 clamp(20px, 3vw, 44px)">
+      <sc-for list="{{ indexList }}" as="f" hint-placeholder-count="12">
+        <button onClick="{{ f.onOpen }}" style="display: flex; gap: 14px; align-items: baseline; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--color-divider); padding: 11px 2px; font-family: inherit; font-size: 15.5px; color: var(--color-neutral-200); line-height: 1.6; cursor: pointer" style-hover="color: var(--color-accent-300)">
+          <span style="flex: none; min-width: 42px; font-family: Inter, sans-serif; font-size: 12.5px; color: var(--color-accent-400)">{{ f.no }}</span>
+          <span>{{ f.q }}</span>
+        </button>
+      </sc-for>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- SAVED -->
+  <sc-if value="{{ isSaved }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 820px; margin: 0 auto; padding: 42px clamp(18px, 4vw, 40px) 0">
+    <h1 style="margin: 0 0 26px; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: clamp(25px, 4.4vw, 31px)">Saved fatwas</h1>
+    <sc-if value="{{ savedEmpty }}" hint-placeholder-val="{{ false }}">
+      <p style="margin: 0; font-size: 15px; line-height: 1.85; color: var(--color-neutral-500)">Nothing saved yet. Open a fatwa and press Save.</p>
+    </sc-if>
+    <div style="display: flex; flex-direction: column">
+      <sc-for list="{{ savedList }}" as="f" hint-placeholder-count="0">
+        <article onClick="{{ f.onOpen }}" style="padding: 17px 0; border-top: 1px solid var(--color-divider); cursor: pointer">
+          <div style="display: flex; gap: 10px; margin-bottom: 7px">
+            <span style="font-family: Inter, sans-serif; font-size: 12px; color: var(--color-accent-400)">{{ f.no }}</span>
+            <span style="font-size: 12px; color: var(--color-neutral-600)">{{ f.subject }}</span>
+          </div>
+          <h3 style="margin: 0; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: 18.5px; line-height: 1.68">{{ f.q }}</h3>
+        </article>
+      </sc-for>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- FATWA -->
+  <sc-if value="{{ isFatwa }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1180px; margin: 0 auto; padding: 28px clamp(18px, 4vw, 40px) 0">
+    <button onClick="{{ goBack }}" style="background: none; border: 0; color: var(--color-neutral-500); font-family: inherit; font-size: 14px; padding: 0; margin-bottom: 26px; cursor: pointer" style-hover="color: var(--color-accent-300)">← Back</button>
+
+    <div style="display: flex; flex-wrap: wrap; gap: clamp(26px, 4vw, 52px); align-items: start">
+      <article style="flex: 3 1 340px; min-width: 0">
+        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 16px; flex-wrap: wrap">
+          <span class="tag tag-accent" style="font-family: inherit; font-size: 12.5px">{{ current.subject }}</span>
+          <span style="font-family: Inter, sans-serif; font-size: 12px; color: var(--color-neutral-600)">{{ current.no }}</span>
+        </div>
+
+        <p style="margin: 0 0 10px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600); font-family: Inter, sans-serif">ചോദ്യം</p>
+        <h1 style="margin: 0; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: clamp(22px, 3.6vw, 29px); line-height: 1.6; text-wrap: pretty">{{ current.q }}</h1>
+
+        <div style="height: 1px; background: linear-gradient(90deg, transparent, var(--color-accent-700) 10%, var(--color-accent-700) 58%, transparent); margin: 28px 0 26px"></div>
+
+        <p style="margin: 0 0 22px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-400); font-family: Inter, sans-serif">ഉത്തരം</p>
+
+        <div style="display: flex; flex-direction: column; gap: 34px">
+          <sc-for list="{{ current.blocks }}" as="bl" hint-placeholder-count="1">
+            <div>
+              <p style="margin: 0 0 20px; font-size: 15px; line-height: 1.85; color: var(--color-neutral-400); font-style: italic; max-width: 60ch; padding-left: 14px; border-left: 2px solid var(--color-accent-700)">{{ bl.by }}</p>
+              <div style="display: flex; flex-direction: column; gap: 15px">
+                <sc-for list="{{ bl.points }}" as="pt" hint-placeholder-count="3">
+                  <div style="display: flex; gap: 13px; align-items: flex-start">
+                    <span style="flex: none; width: 7px; height: 7px; margin-top: 11px; background: var(--color-accent-500); border-radius: 1px"></span>
+                    <p style="margin: 0; font-size: clamp(16.5px, 1.8vw, 18.5px); line-height: 2; color: var(--color-neutral-200); max-width: 60ch">
+                      <sc-for list="{{ pt.seg }}" as="sg" hint-placeholder-count="1"><span style="font-weight: {{ sg.w }}; color: {{ sg.c }}">{{ sg.t }}</span></sc-for>
+                    </p>
+                  </div>
+                </sc-for>
+              </div>
+              <sc-if value="{{ bl.hasUrl }}" hint-placeholder-val="{{ true }}">
+                <a href="{{ bl.url }}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; font-size: 14px; padding: 8px 14px; border: 1px solid var(--color-neutral-800); border-radius: var(--radius-sm)" style-hover="border-color: var(--color-accent-600)">{{ bl.linkLabel }} ↗</a>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ hasNote }}" hint-placeholder-val="{{ false }}">
+        <div class="card" style="margin-top: 36px; padding: 18px 20px">
+          <p style="margin: 0 0 8px; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); font-family: Inter, sans-serif">വിവർത്തകന്റെ കുറിപ്പ്</p>
+          <p style="margin: 0; font-size: 16.5px; line-height: 1.95; color: var(--color-neutral-300); font-style: italic">{{ current.note }}</p>
+        </div>
+        </sc-if>
+
+        <div style="margin-top: 34px; padding-top: 20px; border-top: 1px solid var(--color-divider)">
+          <p style="margin: 0 0 4px; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); font-family: Inter, sans-serif">ആശയ വിവർത്തനം</p>
+          <p style="margin: 0; font-size: 16px; color: var(--color-neutral-200)">മുജാഹിദ് അൽ ഹികമി പറവണ്ണ</p>
+          <p style="margin: 3px 0 0; font-size: 13.5px; color: var(--color-neutral-500); font-style: italic">ജാമിഅ അൽ ഹിന്ദ് അൽ ഇസ്‌ലാമിയ്യ – മിനിഊട്ടി</p>
+        </div>
+
+        <div style="margin-top: 42px">
+          <h2 style="margin: 0 0 12px; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: 19px">Related fatwas</h2>
+          <div style="display: flex; flex-direction: column">
+            <sc-for list="{{ related }}" as="r" hint-placeholder-count="2">
+              <button onClick="{{ r.onOpen }}" style="display: flex; gap: 12px; align-items: baseline; text-align: left; background: none; border: 0; border-top: 1px solid var(--color-divider); padding: 13px 2px; font-family: inherit; font-size: 16.5px; color: var(--color-neutral-300); line-height: 1.65; cursor: pointer" style-hover="color: var(--color-accent-300)">
+                <span style="flex: none; font-family: Inter, sans-serif; font-size: 12px; color: var(--color-neutral-600)">{{ r.no }}</span>
+                <span>{{ r.q }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </article>
+
+      <aside style="flex: 1 1 210px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+        <div class="card" style="padding: 18px">
+          <dl style="margin: 0; display: flex; flex-direction: column; gap: 14px">
+            <div>
+              <dt style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 4px; font-family: Inter, sans-serif">Fatwa no.</dt>
+              <dd style="margin: 0; font-size: 15px; color: var(--color-neutral-200); font-family: Inter, sans-serif">{{ current.no }}</dd>
+            </div>
+            <div>
+              <dt style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 4px; font-family: Inter, sans-serif">Scholar</dt>
+              <dd style="margin: 0; font-size: 14.5px; color: var(--color-neutral-200); line-height: 1.6">{{ current.scholarShort }}</dd>
+            </div>
+            <div>
+              <dt style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 4px; font-family: Inter, sans-serif">Chapter</dt>
+              <dd style="margin: 0; font-size: 14px; color: var(--color-neutral-300)">{{ current.chapter }}</dd>
+            </div>
+          </dl>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <button onClick="{{ copyFull }}" class="btn btn-primary btn-block" style="font-family: inherit; font-size: 14.5px; cursor: pointer">{{ copyFullLabel }}</button>
+          <button onClick="{{ shareFull }}" class="btn btn-secondary btn-block" style="font-family: inherit; font-size: 14.5px; cursor: pointer">Share</button>
+          <button onClick="{{ toggleSaveCurrent }}" class="btn btn-ghost btn-block" style="font-family: inherit; font-size: 14.5px; cursor: pointer">{{ saveLabel }}</button>
+          <button onClick="{{ copyLink }}" class="btn btn-ghost btn-block" style="font-family: inherit; font-size: 14.5px; cursor: pointer">{{ copyLabel }}</button>
+          <button onClick="{{ printPage }}" class="btn btn-ghost btn-block" style="font-family: inherit; font-size: 14.5px; cursor: pointer">Print</button>
+          <p style="margin: 4px 0 0; font-size: 12.5px; line-height: 1.65; color: var(--color-neutral-500)">Copies the question, answer, source link and translator credit exactly as published.</p>
+        </div>
+        <div class="card" style="padding: 16px">
+          <p style="margin: 0 0 10px; font-size: 13px; line-height: 1.7; color: var(--color-neutral-400)">Daily fatwas</p>
+          <div style="display: flex; flex-direction: column; gap: 7px">
+            <a href="https://t.me/call2allah" target="_blank" rel="noopener" style="font-size: 14px">Telegram channel ↗</a>
+            <a href="https://chat.whatsapp.com/HvC5O5PbkPw8IXKMKValuM" target="_blank" rel="noopener" style="font-size: 14px">WhatsApp group ↗</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  </sc-if>
+
+  <div style="margin-top: 72px; padding: 20px clamp(18px, 4vw, 40px); background: var(--color-accent-900); border-top: 1px solid var(--color-divider)">
+    <div style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px">
+      <span style="font-family: Inter, sans-serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-300); white-space: nowrap">Under construction</span>
+      <span style="font-size: 14px; line-height: 1.7; color: var(--color-neutral-300); flex: 1 1 360px; min-width: 0">This archive is still being built and is updated frequently. Your feedback helps make it accurate and easy to use — please send corrections and suggestions.</span>
+      <a href="https://wa.me/917994514263" target="_blank" rel="noopener" style="font-size: 14px; white-space: nowrap">Send feedback on WhatsApp ↗</a>
+    </div>
+  </div>
+
+  <footer style="padding: 22px clamp(18px, 4vw, 40px); border-top: 1px solid var(--color-divider)">
+    <div style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline">
+      <span style="font-size: 13.5px; color: var(--color-neutral-500)">Designed by</span>
+      <a href="https://arabexinternational.com/techsolutions" target="_blank" rel="noopener" style="font-size: 13.5px">Arabex Tech Solutions ↗</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1180, &quot;height&quot;: 900}}">
+const n = t => ({ t: t });
+const b = t => ({ t: t, b: 1 });
+
+const DATA = [
+  {
+    no: "880", chapter: "അഖീദ", subject: "ബിദ്അത്ത്",
+    keys: "nabidinam moulid mawlid bidath birthday celebration",
+    q: "നബിദിനാഘോഷത്തിന്റെ വിധിയെന്താണ്? നബിﷺ മൗലിദ് ആഘോഷത്തിന്റെ സദസ്സിൽ പങ്കെടുക്കുമോ?",
+    scholarShort: "ലജ്നത്തുദ്ദാഇമ",
+    blocks: [{
+      by: "സഊദി അറേബ്യയുടെ ഔദ്യോഗിക പണ്ഡിതസഭയായ ലജ്നത്തുദ്ദാഇമ പറയുന്നു:",
+      url: "https://al-fatawa.com/fatwa/112129", linkLabel: "അറബി മൂലം വായിക്കാൻ",
+      points: [
+        { seg: [n("നബിﷺയെ "), b("ആദരിക്കേണ്ടതും ബഹുമാനിക്കേണ്ടതും"), n(" അല്ലാഹുവിൽ നിന്ന് അവിടുന്ന് കൊണ്ടുവന്ന സന്ദേശത്തിൽ "), b("വിശ്വസിക്കുന്നതിലൂടെയും അതനുസരിച്ച് ജീവിക്കുന്നതിലൂടെയുമാണ്.")] },
+        { seg: [n("എന്നാൽ, അവിടുത്തെ "), b("ജന്മദിനം"), n(" ആഘോഷിക്കുന്നത് പുതുതായി ഉണ്ടാക്കപ്പെട്ട "), b("ബിദ്അത്താണ്.")] },
+        { seg: [n("“നമ്മുടെ ഈ (ദീനിന്റെ)കാര്യത്തിൽ അതിലില്ലാത്തത് ആരെങ്കിലും "), b("പുതുതായി ഉണ്ടാക്കിയാൽ അത് തള്ളപ്പെടേണ്ടതാണ്.”"), n(" എന്ന് നബിﷺ പറഞ്ഞിട്ടുണ്ട്.")] },
+        { seg: [n("നബിﷺ അവിടുത്തെ വേർപാടിനുശേഷം "), b("ഒരാളുടെ അടുക്കലും ഹാജരാകുമെന്ന് സ്ഥിരപ്പെട്ടിട്ടില്ല.")] },
+        { seg: [b("അങ്ങനെ സംഭവിക്കുകയില്ല എന്നതാണ് അടിസ്ഥാനം."), n(" വ്യക്തമായ തെളിവില്ലാതെ ഈ അടിസ്ഥാന തത്ത്വത്തിൽ നിന്ന് മാറാൻ പറ്റുകയില്ല.")] }
+      ]
+    }],
+    note: ""
+  },
+  {
+    no: "879", chapter: "ഇബാദത്ത്", subject: "ത്വഹാറത്ത്",
+    keys: "eli mouse water vellam thahara najas purity",
+    q: "വെള്ളം നിറച്ച പാത്രത്തിൽ എലി വീണാൽ, ആ വെള്ളത്തിന്റെ വിധിയെന്താണ്?",
+    scholarShort: "ശൈഖ് ഇബ്നു ഉഥൈമീൻ",
+    blocks: [{
+      by: "സഊദി അറേബ്യയുടെ ഉന്നത പണ്ഡിത സഭയിലെ അംഗമായിരുന്ന ശൈഖ് മുഹമ്മദ് ബിൻ സ്വാലിഹ് അൽ ഉഥൈമീൻ (റഹിമഹുല്ലാഹ്) പറയുന്നു:",
+      url: "http://www.youtube.com/watch?v=xCTXAMRlICo", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+      points: [
+        { seg: [n("എലി വെള്ളത്തിൽ വീഴുകയും ജീവനോടെ പുറത്തുവരികയും ചെയ്താൽ, "), b("ആ വെള്ളം (ത്വാഹിർ) ശുദ്ധമാണ്.")] },
+        { seg: [n("കാരണം, വീടുകളിൽ മനുഷ്യർക്കിടയിൽ നിരന്തരം കറങ്ങിനടക്കുന്ന ജീവികളുടെ ഗണത്തിലാണ് എലിയെ കണക്കാക്കുന്നത്. "), b("(അങ്ങനെയുള്ള ജീവികൾ നജസല്ല).")] },
+        { seg: [n("എലി വെള്ളത്തിൽ വീണ് "), b("ചാവുകയും,"), n(" എന്നാൽ വെള്ളത്തിന്റെ ഗുണങ്ങളിൽ "), b("(നിറം, മണം, രുചി) മാറ്റമൊന്നും വരാതിരിക്കുകയും ചെയ്താൽ"), n(" പ്രബലമായ അഭിപ്രായപ്രകാരം ആ വെള്ളവും ശുദ്ധമായിത്തന്നെ നിലനിൽക്കും. (എലി വീണ് ചത്തിട്ട് വെള്ളത്തിൻ്റെ നിറമോ രുചിയോ മണമോ മാറിയാൽ, ആ വെള്ളം നജസ് ആവുകയും ചെയ്യും.)")] }
+      ]
+    }],
+    note: "“എലി വെള്ളത്തിൽ വീണ് ചത്തിട്ടും വെള്ളത്തിന് മാറ്റം വന്നിട്ടില്ലെങ്കിൽ, ആ വെള്ളം ശുദ്ധമാണ് എന്നത് പ്രബലമായ അഭിപ്രായമാണ്. (കുറഞ്ഞ വെള്ളമാണെങ്കിൽ അശുദ്ധമാകും എന്ന് അഭിപ്രായപ്പെട്ട പണ്ഡിതന്മാരുമുണ്ട്)”"
+  },
+  {
+    no: "878", chapter: "ഇബാദത്ത്", subject: "നമസ്കാരം",
+    keys: "tharaveeh taraweeh imam ramadan night prayer rathri namaskaram",
+    q: "ആരെങ്കിലും ഒരു ഇമാമിന്റെ കൂടെ ആ ഇമാം പിരിയുന്നത് വരെ രാത്രി നമസ്കാരം നിർവഹിച്ചാൽ, അവർക്ക് രാത്രി മുഴുവൻ നമസ്കരിച്ച കൂലിയുണ്ടെന്ന് നബി ﷺ പറഞ്ഞല്ലോ. എന്നാൽ രണ്ട് ഇമാമുമാരുടെ പിന്നിലായി തറാവീഹ് നമസ്കരിച്ച ഒരാൾക്ക് ഈ കൂലി ലഭിക്കുമോ?",
+    scholarShort: "ശൈഖ് അസീസ് അൽ അനിസി, ശൈഖ് സ്വാലിഹ് അൽ ഫൗസാൻ",
+    blocks: [
+      {
+        by: "ശൈഖ് അസീസ് ഫർഹാൻ അൽ അനിസി (ഹഫിള്വഹുല്ലാഹ്) പറയുന്നു:",
+        url: "https://youtu.be/x7H1pKzUy20", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+        points: [
+          { seg: [n("തറാവീഹ് നമസ്കാരത്തിന് "), b("ഒന്നിലധികം ഇമാമുമാർ നേതൃത്വം നൽകുന്നത്"), n(" അനുവദനീയമായ കാര്യമാണ്.")] },
+          { seg: [b("മസ്ജിദുൽ ഹറാമിലും മസ്ജിദുന്നബവിയിലുമെല്ലാം"), n(" ഒന്നിലധികം ഇമാമുമാരാണ് തറാവീഹ് നമസ്കാരത്തിന് നേതൃത്വം നൽകുന്നത്. "), b("അത് അനുവദനീയമാണ്.")] },
+          { seg: [n("ആരെങ്കിലും "), b("ഒരു ഇമാമിന്റെ കൂടെ"), n(" ആ ഇമാം പിരിയുന്നത് വരെ രാത്രി നമസ്കാരം നിർവഹിച്ചാൽ, അവർക്ക് രാത്രി മുഴുവൻ നിന്ന് നമസ്കരിച്ച കൂലിയുണ്ടെന്ന നബി ﷺയുടെ "), b("വാക്ക് ചിലർ തെറ്റായാണ് മനസ്സിലാക്കിയിട്ടുള്ളത്.")] },
+          { seg: [b("തറാവീഹ് മുഴുവനായും ഒറ്റ ഇമാമിന്റെ പിന്നിലായി"), n(" നമസ്കരിച്ചാൽ മാത്രമേ ആ കൂലി ലഭിക്കുകയുള്ളൂ എന്ന് അവർ കരുതുന്നു. അത് ഹദീസിനെ തെറ്റായി മനസ്സിലാക്കിയതാണ്.")] },
+          { seg: [n("നബി ﷺ പറഞ്ഞതിന്റെ ഉദ്ദേശം, "), b("ആ രാത്രിയിലെ തറാവീഹ് നമസ്കാരം പൂർണ്ണമായും നിസ്കരിക്കുക എന്നതാണ്.")] },
+          { seg: [b("അത് ഒന്നിലധികം ഇമാമുമാരുടെ പിന്നിലാകാം."), n(" ആ രാത്രിയിലെ നമസ്കാരം തീരുന്നത് വരെ അവരുടെ കൂടെ നിൽക്കുക എന്നതാണ് ഉദ്ദേശം.")] }
+        ]
+      },
+      {
+        by: "സഊദി അറേബ്യയുടെ ഗ്രാൻ്റ് മുഫ്‌തി ശൈഖ് സ്വാലിഹ് അൽ ഫൗസാൻ (ഹഫിള്വഹുല്ലാഹ്) പറയുന്നു:",
+        url: "https://youtu.be/f3aSNQ1r8lQ", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+        points: [
+          { seg: [n("നബി ﷺ പറഞ്ഞ രാത്രി മുഴുവൻ നിന്ന് നമസ്കരിച്ച കൂലി ലഭിക്കാൻ "), b("ഒറ്റ ഇമാമിന്റെ പിന്നിൽ തന്നെ നിന്ന് നമസ്കരിക്കണമെന്ന് നിർബന്ധമില്ല.")] }
+        ]
+      }
+    ],
+    note: ""
+  },
+  {
+    no: "877", chapter: "മുആമലാത്ത്", subject: "അനന്തരാവകാശം",
+    keys: "wasiyyath vasiyyath swath inheritance will anantharavakasham",
+    q: "എന്റെ ഉമ്മ അവരുടെ മുഴുവൻ സ്വത്തും, എന്റെ സഹോദരങ്ങളിൽ ഒരാൾക്ക് മാത്രമായി നൽകണമെന്ന് വസ്വിയ്യത്ത് ചെയ്തിരുന്നു. സഹോദരന്മാരുടെ കൂട്ടത്തിൽ ചിലർ ഇത് സമ്മതിക്കുകയും മറ്റു ചിലർ ഇത് വിസമ്മതിക്കുകയും ചെയ്യുന്നു. ഞങ്ങൾ ഈ വസ്വിയ്യത്ത് നടപ്പിലാക്കേണ്ടതുണ്ടോ? ഇങ്ങനെ വസ്വിയ്യത്ത് ചെയ്തത് കാരണം ഉമ്മാക്ക് എന്തെങ്കിലും കുറ്റമുണ്ടാകുമോ?",
+    scholarShort: "ശൈഖ് അബ്ദുസ്സലാം അസ്സുലൈമാൻ",
+    blocks: [{
+      by: "സൗദി അറേബ്യയുടെ ഔദ്യോഗിക പണ്ഡിത സഭയായ ലജ്നത്തുദ്ദാഇമയിലെ അംഗം ശൈഖ് അബ്ദുസ്സലാം ബ്ൻ അബ്ദില്ലാഹ് അസ്സുലൈമാൻ (ഹഫിള്വഹുല്ലാഹ്) പറയുന്നു:",
+      url: "https://youtu.be/vGhEOw3pjR8", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+      points: [
+        { seg: [n("മക്കളിൽ ചിലരെ ഒഴിവാക്കി, ഒരാൾക്ക് മാത്രം തൻ്റെ സ്വത്ത് വസ്വിയ്യത്ത് ചെയ്യാൻ "), b("ഒരു ഉമ്മാക്കും അവകാശമില്ല."), n(" അങ്ങനെ ചെയ്യുന്നത് ഇസ്‌ലാമിൽ "), b("അനുവദനീയമല്ല.")] },
+        { seg: [n("അതിനാൽ, ഈ വസ്വിയ്യത്ത് അസാധുവാണ് "), b("(ബാത്വിലാണ്) എന്നതാണ് ശരി.")] },
+        { seg: [n("എന്നാൽ മറ്റ് അനന്തരാവകാശികൾ "), b("എല്ലാവരും ഇത് അംഗീകരിക്കുകയും"), n(" തങ്ങളുടെ അവകാശം സ്വമേധയാ "), b("വിട്ടുനൽകുകയും ചെയ്താൽ,"), n(" ഈ വസ്വിയ്യത്ത് നടപ്പിലാക്കുന്നതിന് പ്രശ്നവുമില്ല.")] },
+        { seg: [n("“അല്ലാഹു "), b("ഓരോരുത്തർക്കും അവകാശപ്പെട്ട അവകാശം"), n(" നൽകിയിട്ടുണ്ട്, അതിനാൽ അനന്തരാവകാശിക്ക് വസ്വിയ്യത്ത് ഇല്ല "), b("(അനന്തരാവകാശിയായിട്ടുള്ള ഒരാൾക്ക് സ്വത്ത് വസ്വിയ്യത്ത് ചെയ്യാൻ പാടില്ല)” എന്ന് നബിﷺ"), n(" വ്യക്തമാക്കിയിട്ടുണ്ട്. (അബൂദാവൂദ്: 2870)")] },
+        { seg: [n("അപ്പോൾ "), b("മറ്റു അവകാശികളെ ഒഴിവാക്കി ചിലർക്ക് മാത്രം"), n(" സ്വത്ത് വസ്വിയ്യത്ത് ചെയ്തുനൽകാൻ ആർക്കും അവകാശമില്ല.")] },
+        { seg: [b("ചില സ്ത്രീകൾ തങ്ങളുടെ പെൺമക്കൾക്ക് മാത്രമായി"), n(" സ്വത്ത് വസ്വിയ്യത്ത് ചെയ്യാറുണ്ട്. മകളുടെ സാമ്പത്തികമായ "), b("പിന്നോക്കാവസ്ഥയോ ദാരിദ്ര്യമോ,"), n(" വിവാഹം കഴിഞ്ഞിട്ടും സ്വന്തമായി വരുമാനമില്ലാത്ത അവസ്ഥയോ ഒക്കെ കണ്ട് മാതാവിന് ആ മകളോട് തോന്നുന്ന "), b("അനുകമ്പ കൊണ്ടാണ് പലപ്പോഴും അങ്ങനെ ചെയ്യുന്നത്.")] },
+        { seg: [n("എന്നാൽ ഒരു മുസ്‌ലിമും, തങ്ങളുടെ "), b("അനന്തരാവകാശികളിൽപെട്ട ആർക്കും"), n(" സ്വത്ത് വസ്വിയ്യത്ത് ചെയ്യാൻ പാടില്ല എന്നതാണ് ശരിയായ നിയമം.")] },
+        { seg: [n("ഇനി "), b("മാതാവ് അങ്ങനെ വസ്വിയ്യത്ത് ചെയ്യുകയും,"), n(" ബാക്കിയുള്ള അനന്തരാവകാശികൾ എല്ലാവരും അത് "), b("അംഗീകരിച്ച് തങ്ങളുടെ അവകാശം വേണ്ടെന്ന് വെക്കുകയും"), n(" ചെയ്താൽ ആ വസ്വിയ്യത്ത് നടപ്പാക്കുന്നതിൽ തെറ്റില്ല.")] },
+        { seg: [b("ചോദ്യത്തിൽ പറഞ്ഞതുപോലെ"), n(" ചില അവകാശികൾ ഇത് സമ്മതിക്കുകയും ചിലർ സമ്മതിക്കാതിരിക്കുകയും ചെയ്തെങ്കിൽ, "), b("സമ്മതിച്ചവർ തങ്ങളുടെ സ്വന്തം അവകാശം വിട്ടുനൽകിയതിലൂടെ"), n(" സ്വന്തം സഹോദരിയോടോ സഹോദരനോടോ നന്മ ചെയ്തു.")] },
+        { seg: [n("വസ്വിയ്യത്ത് "), b("അംഗീകരിക്കാത്തവർക്കാകട്ടെ, അവരുടെ അർഹമായ അവകാശം നൽകേണ്ടതുണ്ട്.")] },
+        { seg: [n("സ്വന്തം അവകാശം വിട്ടുനൽകാൻ തയ്യാറാകാത്തവരെ ആക്ഷേപിക്കാനോ, "), b("“എന്തുകൊണ്ട് ഇവർ വിട്ടുനൽകിയില്ല” എന്ന് കുറ്റപ്പെടുത്താനോ പാടില്ല."), n(" കാരണം അത് അവരുടെ ന്യായമായ അവകാശമാണ്.")] },
+        { seg: [b("ഈ പ്രധാനപ്പെട്ട വിഷയത്തിൽ എല്ലാ മുസ്‌ലിംകളും"), n(" ശ്രദ്ധാലുക്കളായിരിക്കണം.")] },
+        { seg: [n("അനന്തരാവകാശികളിൽ "), b("എല്ലാവർക്കും സ്വത്തിൽ അർഹതപ്പെട്ട പങ്കുണ്ട്."), n(" ആരെങ്കിലും അവകാശം വിട്ടുനൽകുന്നില്ലെങ്കിൽ അത് അവരുടെ അവകാശമാണ്.")] },
+        { seg: [n("അതിനാൽ, സ്വത്തുതർക്കങ്ങളുമായി ബന്ധപ്പെട്ട് "), b("സഹോദരങ്ങൾക്കിടയിൽ യാതൊരുവിധ അകൽച്ചയോ ഭിന്നതയോ"), n(" ഉണ്ടാകാൻ പാടില്ല.")] }
+      ]
+    }],
+    note: ""
+  },
+  {
+    no: "876", chapter: "ആദാബ്", subject: "ഉറക്കം",
+    keys: "urakkam kidakka qibla bed direction sleep kattil",
+    q: "ഉറങ്ങാൻ കിടക്കുന്ന കിടക്കയുടെ ദിശ ക്വിബ്‌ലയിലേക്ക് തന്നെ തിരിച്ചിടണമെന്നുണ്ടോ?",
+    scholarShort: "ശൈഖ് ഇബ്നുബാസ്",
+    blocks: [{
+      by: "സഊദി അറേബ്യയുടെ ഗ്രാന്റ് മുഫ്തിയും ലജ്നത്തുദ്ദാഇമയുടെ തലവനുമായിരുന്ന ശൈഖ് ഇബ്നുബാസ് (റഹിമഹുല്ലാഹ്) പറയുന്നു:",
+      url: "https://share.google/E6DNkXGkgGmdYYwel", linkLabel: "അറബി മൂലം വായിക്കാൻ",
+      points: [
+        { seg: [b("അത് നിർബന്ധമല്ല."), n(" ക്വിബ്‌ലയിലേക്കോ മറ്റേതെങ്കിലും ദിശയിലേക്കോ അഭിമുഖമായി ഉറങ്ങാം.")] },
+        { seg: [n("അതിൽ "), b("കടുംപിടുത്തം കാണിക്കേണ്ട കാര്യമില്ല."), n(" അൽഹംദുലില്ലാഹ്!")] }
+      ]
+    }],
+    note: "ഒരാളുടെ വീടിന്റെയും മുറിയുടെയും ഒക്കെ സൗകര്യം പരിഗണിച്ചുകൊണ്ട് ഉറങ്ങാൻ കിടക്കുന്ന കട്ടിൽ ഏത് ദിശയിലേക്കും തിരിച്ചിടാവുന്നതാണ്. അത് ക്വിബ്‌ലയിലേക്ക് തന്നെ ആകണമെന്ന് നിർബന്ധമില്ല. അങ്ങനെ പറയാൻ പ്രത്യേകിച്ച് തെളിവും വന്നിട്ടില്ല!"
+  },
+  {
+    no: "875", chapter: "ഇബാദത്ത്", subject: "ത്വഹാറത്ത്",
+    keys: "tissue paper istijmar shauchyam malamoothra vellam toilet purity",
+    q: "മലമൂത്ര വിസർജനത്തിന് ശേഷം ​ടിഷ്യൂ പേപ്പർ മാത്രം ഉപയോഗിച്ച് വൃത്തിയാക്കിയാൽ, അത് മതിയാകുമോ?",
+    scholarShort: "ശൈഖ് അസീസ് അൽ അനിസി",
+    blocks: [{
+      by: "ശൈഖ് അസീസ് ഫർഹാൻ അൽ അനിസി (ഹഫിള്വഹുള്ളാഹ്) പറയുന്നു:",
+      url: "https://youtu.be/QfJuv-bdLWI", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+      points: [
+        { seg: [n("അതെ, "), b("(വെള്ളമില്ലാത്തപ്പോഴോ അല്ലെങ്കിൽ വെള്ളം ലഭ്യമായിരിക്കുമ്പോൾ പോലും)"), n(" പേപ്പർ ടിഷ്യൂകൾ മാത്രം ഉപയോഗിച്ച് ശുദ്ധി വരുത്തുന്നത് (ഇസ്തിജ്മാർ) "), b("അനുവദനീയമാണ്.")] },
+        { seg: [n("നബിﷺ മൂന്ന് കല്ലുകൾ ഉപയോഗിച്ച് ശുദ്ധി വരുത്തിയിരുന്നതായി സ്ഥിരപ്പെട്ടിട്ടുണ്ട്.")] },
+        { seg: [b("കല്ലിന്റെ സ്ഥാനത്ത് നിൽക്കുന്ന മറ്റെല്ലാ വസ്തുക്കൾക്കും (പേപ്പർ, ടിഷ്യൂ പോലുള്ളവ) ഇതേ വിധി തന്നെയാണ്"), n(" ബാധകമെന്ന് പണ്ഡിതന്മാർ വ്യക്തമാക്കുന്നു.")] },
+        { seg: [n("അപ്പോൾ ആരെങ്കിലും ടിഷ്യൂ പേപ്പർ ഉപയോഗിച്ച് "), b("ശൗച്യം ചെയ്യാൻ ഉദ്ദേശിക്കുന്നുണ്ടെങ്കിൽ, അവർക്ക് അങ്ങനെ"), n(" ചെയ്യാവുന്നതാണ്.")] },
+        { seg: [n("എന്നാൽ ഒരു നിബന്ധനയുണ്ട്; "), b("​ടിഷ്യൂ ഉപയോഗിക്കുമ്പോൾ മൂന്നിൽ കുറയാൻ പാടില്ല."), n(" മൂന്നോ അതിലധികമോ തവണ ടിഷ്യൂ ഉപയോഗിച്ച് വൃത്തിയാക്കണം.")] },
+        { seg: [n("ഒന്നോ രണ്ടോ തവണ മാത്രം ടിഷ്യൂ ഉപയോഗിച്ച് നിർത്തരുത്. ടിഷ്യൂ ഉപയോഗിക്കുമ്പോൾ "), b("3, 5, 7 എന്നിങ്ങനെ ഒറ്റയായ സംഖ്യയിൽ അവസാനിപ്പിക്കുകയാണ്"), n(" വേണ്ടത്.")] },
+        { seg: [n("നബിﷺ പറഞ്ഞു: “ആരെങ്കിലും ഇസ്തിജ്മാർ ചെയ്യുകയാണെങ്കിൽ അവൻ ഒറ്റയാക്കട്ടെ.” (നസാഈ: 88)")] },
+        { seg: [n("വിസർജ്ജനം ചെയ്ത സ്വകാര്യഭാഗം ഈ പേപ്പറുകളോ ടിഷ്യൂകളോ ഉപയോഗിച്ച് "), b("പൂർണ്ണമായും വൃത്തിയാക്കുക എന്നതാണ് ഏറ്റവും പ്രധാനപ്പെട്ട കാര്യം.")] }
+      ]
+    }],
+    note: ""
+  },
+  {
+    no: "874", chapter: "ഇബാദത്ത്", subject: "നമസ്കാരം",
+    keys: "vimanam flight sujood angyam jama travel prayer plane",
+    q: "വിമാനത്തിലായിരിക്കെ, നിർബന്ധമായ നിസ്കാരത്തിൻ്റെ സമയമായി. ആ സമയത്ത് നിസ്കരിക്കുമ്പോൾ എനിക്ക് സുജൂദ് ചെയ്യാൻ കഴിയുന്നില്ലെങ്കിൽ, അതിനുപകരം ആംഗ്യം കാണിച്ചാൽ മതിയോ?",
+    scholarShort: "ശൈഖ് അബ്ദുൽ അസീസ് അർറാജിഹീ",
+    blocks: [{
+      by: "ജാമിഅതുൽ ഇമാം മുഹമ്മദ് ബ്ൻ സഊദിലെയും ഇരു ഹറമുകളിലെയും അധ്യാപകനായിരുന്ന ശൈഖ് അബ്ദുൽ അസീസ് അർറാജിഹീ (ഹഫിള്വഹുല്ലാഹ്) പറയുന്നു:",
+      url: "https://youtu.be/z6M3YittLIs", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+      points: [
+        { seg: [n("വിമാനത്തിലായിരിക്കുമ്പോൾ "), b("സുജൂദ് ചെയ്യാൻ കഴിയുമെന്നത് അറിയപ്പെട്ട കാര്യമാണ്."), n(" (വിവർത്തകൻ: നിസ്കരിക്കാൻ സൗകര്യമുള്ള വിമാനങ്ങൾ ഉണ്ടല്ലോ. അതായിരിക്കും ശൈഖ് ഉദ്ദേശിച്ചിട്ടുണ്ടാവുക.)")] },
+        { seg: [n("ഒരാൾക്ക് അതിന് കഴിയില്ലെങ്കിൽ, അവർക്ക് "), b("ആംഗ്യം കാണിച്ചുകൊണ്ട്"), n(" നിസ്കരിക്കാവുന്നതാണ്.")] },
+        { seg: [n("അല്ലാഹു പറയുന്നു: “അതിനാൽ നിങ്ങൾക്ക് "), b("കഴിയുന്നത്ര അല്ലാഹുവിനെ സൂക്ഷിക്കുക.”"), n(" [അത്തഗാബുൻ: 16]")] },
+        { seg: [b("ലാൻ്റിംഗിന് ശേഷമോ വിമാനം പറന്നുയരുന്നതിന് മുമ്പോ"), n(" ഒരാൾക്ക് രണ്ട് നിസ്കാരങ്ങൾ "), b("ജംആക്കാൻ കഴിയുമെങ്കിൽ, അതാണ് അഭികാമ്യമായ കാര്യം."), n(" (വിവർത്തകൻ: അങ്ങനെയാകുമ്പോൾ നിസ്കാരം അതിൻ്റെ പരിപൂർണ്ണമായ രൂപത്തിൽ നിർവഹിക്കാൻ പറ്റുമല്ലോ).")] },
+        { seg: [n("ഇനി, ദൈർഘ്യമേറിയ യാത്ര കാരണം നിസ്കാരത്തിൻ്റെ "), b("സമയം തീരുമെങ്കിൽ, സാധിക്കുന്ന വിധത്തിൽ നിസ്കരിക്കണം.")] },
+        { seg: [n("നിന്നുകൊണ്ട് നിസ്കരിക്കാൻ "), b("കഴിയുമെങ്കിൽ"), n(" നിന്നുകൊണ്ട് നിസ്കരിക്കണം; അതിന് "), b("കഴിയുന്നില്ലെങ്കിൽ,"), n(" അവർക്ക് ഇരുന്നുകൊണ്ട് നിസ്കരിക്കാം.")] },
+        { seg: [n("സുജൂദ് ചെയ്യാൻ കഴിയില്ലെങ്കിൽ, "), b("അവർക്ക് അതിനുപകരം ആംഗ്യം കാണിക്കാം.")] },
+        { seg: [n("ഒരു വിമാനത്തിൽ, ഒരാൾക്ക് "), b("സുജൂദ് ചെയ്യാൻ കഴിയാതിരിക്കില്ല."), n(" (വിവർത്തകൻ: നിസ്കരിക്കാൻ സൗകര്യമുള്ള വിമാനങ്ങൾ ഉദ്ദേശിച്ചാകാം.)")] },
+        { seg: [b("സ്ത്രീകളാണെങ്കിലും, അവർക്ക് കഴിയുന്ന വിധത്തിൽ"), n(" അവർ നിസ്കരിക്കണം.")] },
+        { seg: [n("അവൾക്ക് സുജൂദ് ചെയ്യാൻ "), b("കഴിയുന്നില്ലെങ്കിൽ,"), n(" അതിനുപകരം അവൾ "), b("ആംഗ്യം കാണിച്ചാൽ മതി.")] }
+      ]
+    }],
+    note: ""
+  },
+  {
+    no: "873", chapter: "ഇബാദത്ത്", subject: "നമസ്കാരം",
+    keys: "masjidul haram sunnath fardh kooli reward makkah laksham",
+    q: "മസ്ജിദുൽ ഹറാമിൽ വെച്ച് സുന്നത്തുകൾ നിസ്കരിച്ചാലും ഫർദ്വിനെ പോലെ ഒരു ലക്ഷം ഇരട്ടി കൂലി കിട്ടുമോ?",
+    scholarShort: "ശൈഖ് സ്വാലിഹ് അൽ ഫൗസാൻ",
+    blocks: [{
+      by: "സഊദി അറേബ്യയുടെ ഗ്രാന്റ് മുഫ്തിയായ ശൈഖ് സ്വാലിഹ് അൽ ഫൗസാൻ (ഹഫിള്വഹുല്ലാഹ്) പറയുന്നു:",
+      url: "https://youtu.be/jlkHMMDNZ9o", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+      points: [
+        { seg: [n("അതെ, "), b("അത് ഹദീസുകളുടെ പ്രത്യക്ഷത്തിൽ വന്നതുപോലെ തന്നെയാണ്.")] },
+        { seg: [n("ബാക്കിയുള്ള പള്ളികളെ അപേക്ഷിച്ച് മസ്ജിദുൽ ഹറാമിൽ വെച്ചിട്ടുള്ള നിസ്കാരത്തിന് "), b("ഒരു ലക്ഷം ഇരട്ടി കൂലിയുണ്ട്.")] },
+        { seg: [n("അത് (ഫർദ് എന്നോ സുന്നത്ത് എന്നോ വ്യത്യാസമില്ലാതെ) "), b("എല്ലാ നിസ്കാരങ്ങൾക്കുമുള്ള കൂലിയാണത്.")] }
+      ]
+    }],
+    note: ""
+  },
+  {
+    no: "872", chapter: "ഇബാദത്ത്", subject: "നമസ്കാരം",
+    keys: "fajr rawathib sunnath veedu palli home mosque rakath",
+    q: "ഫജ്റിന് മുമ്പുള്ള രണ്ട് റക്അത്ത് റവാത്തിബ് സുന്നത്ത്, വീട്ടിൽ വെച്ച് നിർവഹിക്കുന്നതാണോ പള്ളിയിൽ വെച്ച് നിർവഹിക്കുന്നതാണോ ഉത്തമം?",
+    scholarShort: "ശൈഖ് അബ്ദുൽ അസീസ് ആലു ശൈഖ്",
+    blocks: [{
+      by: "സഊദി അറേബ്യയുടെ ഗ്രാന്റ് മുഫ്തിയായിരുന്ന ശൈഖ് അബ്ദുൽ അസീസ് ആലു ശൈഖ് (റഹിമഹുല്ലാഹ്) പറയുന്നു:",
+      url: "https://youtu.be/RtDnABvXBMk", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+      points: [
+        { seg: [n("ഫർള് നിസ്കാരങ്ങളോട് അനുബന്ധിച്ചുള്ള "), b("മുഴുവൻ റവാത്തിബ് സുന്നത്തുകളും"), n(" വീട്ടിൽ വെച്ച് നിസ്കരിക്കുന്നതാണ് ഏറ്റവും ഉത്തമം.")] },
+        { seg: [n("കാരണം നബിﷺ പറഞ്ഞു: “നിർബന്ധമല്ലാത്ത നിസ്കാരങ്ങൾ ഒരാൾ തന്റെ "), b("വീട്ടിൽ വെച്ച് നിസ്കരിക്കുന്നതാണ്"), n(" ഏറ്റവും ഉത്തമം.” (ബുഖാരി: 731)")] },
+        { seg: [n("അപ്പോൾ, "), b("സുന്നത്ത് നിസ്കാരങ്ങൾ"), n(" വീട്ടിൽ വെച്ച് നിർവഹിക്കുന്നതാണ് "), b("ഏറ്റവും ഉത്തമം.")] }
+      ]
+    }],
+    note: ""
+  },
+  {
+    no: "871", chapter: "ഇബാദത്ത്", subject: "നമസ്കാരം",
+    keys: "mamoom jamaath parayanam adkar loud recitation uchathil",
+    q: "ജമാഅത്ത് നിസ്കാരത്തിൽ മഅ്മൂം ഉച്ചത്തിൽ പാരായണം ചെയ്യുന്നതിന്റെ വിധി എന്താണ്?",
+    scholarShort: "ശൈഖ് ഇബ്നുബാസ്",
+    blocks: [{
+      by: "സഊദി അറേബ്യയുടെ ഗ്രാന്റ് മുഫ്തിയും ലജ്നത്തുദ്ദാഇമയുടെ തലവനുമായിരുന്ന ശൈഖ് ഇബ്നുബാസ് (റഹിമഹുല്ലാഹ്) പറയുന്നു:",
+      url: "https://share.google/WhtwITcVqwSW5zdIG", linkLabel: "അറബി മൂലം വായിക്കാൻ",
+      points: [
+        { seg: [n("ക്വുർആൻ "), b("പാരായണവും"), n(" നിസ്കാരത്തിൽ ചൊല്ലേണ്ട "), b("അദ്കാറുകളും പ്രാർത്ഥനകളുമൊക്കെ"), n(" മഅ്മൂം "), b("പതുക്കെയാക്കലാണ്"), n(" സുന്നത്ത്.")] },
+        { seg: [n("കാരണം, മഅ്മൂം ഇതൊക്കെ ഉച്ചത്തിൽ ചൊല്ലൽ "), b("അനുവദനീയമാണെന്നതിന് തെളിവില്ല.")] },
+        { seg: [n("മാത്രമല്ല, മഅ്മൂം ഇതൊക്കെ ഉച്ചത്തിലാക്കിയാൽ, "), b("കൂടെ നിസ്കരിക്കുന്നവർക്ക് അത് ശല്യമാകും.")] }
+      ]
+    }],
+    note: ""
+  },
+  {
+    no: "870", chapter: "അഖീദ", subject: "വിശ്വാസകാര്യങ്ങൾ",
+    keys: "shia rafidi swahabimar aisha quran kafir takfeer sahaba",
+    q: "സ്വഹാബിമാരെ ചീത്ത വിളിക്കുകയും ആഇശ ബീവിക്കെതിരെ വ്യഭിചാര ആരോപണം നടത്തുകയും ക്വുർആൻ പൂർണമല്ലെന്ന് പറയുകയും ചെയ്യുന്ന ഷിയാ വിഭാഗത്തിൽപെട്ട റാഫിദിയാക്കൾ കാഫിറുകളാണോ എന്ന് സംശയിക്കുന്ന ആളുടെ വിധിയെന്താണ്? ഇതൊക്കെയാണ് റാഫിദികളുടെ വിശ്വാസം എന്നയാൾക്ക് അറിയാം!",
+    scholarShort: "ശൈഖ് സ്വാലിഹ് അൽ ഫൗസാൻ",
+    blocks: [{
+      by: "സഊദി അറേബ്യയുടെ ഗ്രാന്റ് മുഫ്തിയായ ശൈഖ് സ്വാലിഹ് അൽ ഫൗസാൻ (ഹഫിള്വഹുല്ലാഹ്) പറയുന്നു:",
+      url: "https://youtu.be/a5GJni2UwZE", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+      points: [
+        { seg: [n("അത് "), b("ദീനിൽ നിന്ന് പുറത്തു പോകുന്ന"), n(" കാര്യങ്ങളിൽ പെട്ടതാണ്.")] },
+        { seg: [b("ആഇശ ബീവി തെറ്റുകാരിയല്ല"), n(" എന്ന് അല്ലാഹുവാണ് പറഞ്ഞത്. അവർ വ്യഭിചാരിയാണെന്ന് പറയുന്നവർ "), b("അല്ലാഹുവിനെയാണ് കളവാക്കുന്നത്."), n(" അല്ലാഹുവിനെ കളവാക്കുന്നവൻ കാഫിറാണ്.")] },
+        { seg: [n("ആഇശ ബീവിയുടെ നിരപരാധിത്വത്തിന്റെ കാര്യത്തിൽ "), b("മുനാഫിഖുകൾ ആരോപിച്ച ആരോപണം"), n(" ഏറ്റുപറയുകയും ആഇശ ബീവിയെ "), b("കുറ്റക്കാരിയായി കാണുകയും"), n(" ചെയ്യുന്നവൻ കളവാക്കുന്നത് "), b("നബി‍ﷺയെയും മുസ്‌ലിംകളുടെ ഇജ്മാഇനെയും കൂടിയാണ്.")] },
+        { seg: [n("അതുകൊണ്ടുതന്നെ "), b("ആഇശ ബീവിയെ നിരപരാധിയായി കാണാത്തവൻ കാഫിറാണ്."), n(" കാരണം അവൻ അല്ലാഹുവിനെയും റസൂലിനെയും മുസ്‌ലിംകളുടെ ഇജ്മാഇനെയും ആണ് കളവാക്കുന്നത്.")] },
+        { seg: [n("അതുപോലെതന്നെ "), b("ക്വുർആൻ പൂർണമല്ലെന്നും"), n(" മുഹമ്മദ് നബി‍ﷺക്ക് അവതരിപ്പിക്കപ്പെട്ട "), b("ക്വുർആൻ ഇതല്ലെന്നും"), n(" നുബുവ്വത്ത് ലഭിക്കേണ്ടത് അലി (റ) വിനായിരുന്നുവെന്നും "), b("ജിബിരീലിന് തെറ്റുപറ്റി"), n(" മുഹമ്മദ് നബി‍ﷺക്ക് വഹ്‌യ് കൊടുത്തതാണെന്നും "), b("അലി(റ) ഇലാഹാണെന്നും"), n(" ഒക്കെ വിശ്വസിക്കുന്ന ആളുകൾ കാഫിറുകളാണ് എന്ന കാര്യത്തിൽ സംശയമില്ല.")] },
+        { seg: [b("സ്വഹാബിമാരെ മൊത്തത്തിൽ കാഫിറാക്കുന്നവർ കാഫിറുകളാണ്."), n(" കാരണം, അവർ അല്ലാഹുവിനെയും റസൂലിനെയും ആണ് കളവാക്കുന്നത്.")] },
+        { seg: [n("കാരണം സ്വഹാബിമാരെ പറ്റി അല്ലാഹു പറയുന്നു: “(ആ) വൃക്ഷത്തിന്‍റെ ചുവട്ടില്‍വെച്ചു നിന്നോടു പ്രതിജ്ഞ ['ബൈഅത്തു'] ചെയ്യുമ്പോള്‍ (ആ) സത്യവിശ്വാസികളെക്കുറിച്ച് "), b("തീര്‍ച്ചയായും അല്ലാഹു തൃപ്തിപ്പെട്ടിട്ടുണ്ട്.”"), n(" (ക്വുർആൻ - 48:18)")] },
+        { seg: [n("“തീര്‍ച്ചയായും, നബിയുടെയും, (ആ) ഞെരുക്കത്തിന്‍റെ ഘട്ടത്തില്‍ അദ്ദേഹത്തെ പിന്‍തുടര്‍ന്നു പോയവരായ ‘മുഹാജിറു’കളുടെയും, ‘അന്‍സ്വാരി’കളുടെയും പേരില്‍ "), b("അല്ലാഹു (കനിഞ്ഞു) മടങ്ങിയിട്ടുണ്ട്‌; [അവര്‍ക്ക്‌ പൊറുത്തുകൊടുത്തിട്ടുണ്ട്‌]”"), n(" (ക്വുർആൻ - 9:117)")] },
+        { seg: [n("‘മുഹാജിറു’കളില്‍നിന്നും, ‘അന്‍സ്വാരി’കളില്‍ നിന്നും ആദ്യത്തവരായി മുന്‍കടന്നവരും, നിഷ്‌കളങ്കം സുകൃതം ചെയ്‌തുകൊണ്ട്‌ അവരെ പിന്തുടര്‍ന്നവരും, അവരെക്കുറിച്ച്‌ "), b("അല്ലാഹു തൃപ്‌തിപ്പെട്ടിരിക്കുന്നു; അവര്‍ അവനെക്കുറിച്ചും തൃപ്‌തിപ്പെട്ടിരിക്കുന്നു;"), n(" (ക്വുർആൻ - 9:100)")] },
+        { seg: [n("നബി‍ﷺ പറയുന്നു: “നിങ്ങള്‍ എന്റെ അനുചരന്മാരെ ചീത്ത പറയരുത്. നിങ്ങളിലൊരാള്‍ "), b("ഉഹ്ദ് മലയോളം സ്വര്‍ണം ചെലവഴിച്ചാലും അവര്‍ ചെലവഴിച്ച ഒരു മുദ്ദിന്റെ അത്രയോ അതിൻ്റെ പകുതിയോ ആവുകയില്ല അത്.”"), n(" (ബുഖാരി: 3673)")] },
+        { seg: [n("അപ്പോൾ സ്വഹാബിമാരെ മൊത്തത്തിൽ കാഫിർ ആക്കുന്നവൻ "), b("കാഫിറാണെന്ന കാര്യത്തിൽ സംശയമില്ല.")] },
+        { seg: [n("കാരണം അവൻ കളവാക്കുന്നത് "), b("അല്ലാഹുവിനെയും റസൂലിനേയും മുസ്‌ലിംകളുടെ ഇജ്മാഇനെയുമാണ്.")] }
+      ]
+    }],
+    note: ""
+  },
+  {
+    no: "869", chapter: "അഖീദ", subject: "വിശ്വാസകാര്യങ്ങൾ",
+    keys: "qabr shiksha rooh sareeram grave punishment soul body",
+    q: "ക്വബ്ർ ശിക്ഷ റൂഹിനെ മാത്രം ബാധിക്കുന്ന കാര്യമാണോ? അതല്ല റൂഹിനെയും ശരീരത്തെയും ബാധിക്കുന്നതാണോ?",
+    scholarShort: "ശൈഖ് സ്വാലിഹ് അൽ ഫൗസാൻ",
+    blocks: [{
+      by: "സഊദി അറേബ്യയുടെ ഗ്രാന്റ് മുഫ്തിയായ ശൈഖ് സ്വാലിഹ് അൽ ഫൗസാൻ (ഹഫിള്വഹുല്ലാഹ്) പറയുന്നു:",
+      url: "https://youtu.be/KN0BEG47PM0", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+      points: [
+        { seg: [n("ഒരു സംശയവുമില്ല, അത് "), b("റൂഹിനെയും ശരീരത്തെയും ബാധിക്കുന്നതാണ്.")] },
+        { seg: [n("ശരീരം ലയിച്ച് "), b("മണ്ണായി മാറിയാലും,"), n(" ശിക്ഷ അതിനെ ബാധിക്കും.")] },
+        { seg: [b("അല്ലാഹു എല്ലാത്തിനും കഴിവുള്ളവനാണ്.")] }
+      ]
+    }],
+    note: ""
+  },
+  {
+    no: "868", chapter: "ഇബാദത്ത്", subject: "നോമ്പ്",
+    keys: "shawwal aaru nomb six fasts aisha shaban ramadan qadha",
+    q: "(റമദാനിൽ നഷ്ടപ്പെട്ട നോമ്പുകൾ പൂർത്തിയാക്കിയതിനു ശേഷം മാത്രമേ ശവ്വാലിലെ ആറു നോമ്പെടുക്കാൻ പാടുള്ളൂ എന്നല്ലേ). അങ്ങനെയാണെങ്കിൽ ആഇഷാ ബീവി(റ) റമദാനിൽ നഷ്ടപ്പെട്ട നോമ്പുകൾ വീട്ടിയിരുന്നത് ശഅ്ബാനിൽ ആണെന്ന് ഹദീസിൽ വന്നിട്ടുണ്ടല്ലോ. ഇതിൽ നിന്ന് മനസ്സിലാകുന്നത് ആഇഷാ ബീവി(റ) ശവ്വാലിലെ ആറു നോമ്പ് നോറ്റിട്ടില്ല എന്നാണോ?",
+    scholarShort: "ശൈഖ് സുലൈമാൻ റുഹൈലി",
+    blocks: [{
+      by: "മദീന യൂണിവേഴ്സിറ്റി പ്രൊഫസറും മസ്ജിദുന്നബവിയിലെ അദ്ധ്യാപകനും മസ്ജിദു ക്വുബായിലെ ഖത്വീബുമായ ശൈഖ് സുലൈമാൻ റുഹൈലി (ഹഫിള്വഹുല്ലാഹ്) പറയുന്നു:",
+      url: "https://youtu.be/zdkGm2YCWvQ", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+      points: [
+        { seg: [n("പ്രത്യക്ഷത്തിൽ നിന്ന് മനസ്സിലാകുന്നത് നമ്മുടെ ഉമ്മ ആഇഷാ ബീവി(റ) "), b("ശവ്വാലിലെ ആറു നോമ്പുകൾ എടുത്തിട്ടില്ലെന്നാണ്.")] },
+        { seg: [b("നബി‍ﷺയുമായി ബന്ധപ്പെട്ട"), n(" കാര്യങ്ങളിൽ വ്യാപൃത ആയതുകൊണ്ടാണ് അങ്ങനെ സംഭവിച്ചത്.")] },
+        { seg: [n("റമദ്വാനിൽ നഷ്ടപ്പെട്ട നോമ്പുകൾ തന്നെ നമ്മുടെ ഉമ്മ വൈകിപ്പിച്ചിട്ട് "), b("ശഅ്ബാനിൽ ആണ് നോറ്റു വീട്ടിയിരുന്നത്.")] },
+        { seg: [n("ഇനി നബി‍ﷺക്ക് ഒമ്പത് ഭാര്യമാർ ഇല്ലേ? ആയിഷ ബീവി മാത്രമല്ലല്ലോ? എന്നൊരാൾ പറയുകയാണെങ്കിൽ, "), b("നബി‍ﷺ എല്ലാ ദിവസവും എല്ലാ ഭാര്യമാരുടെ അടുക്കലേക്കും ചെല്ലാറുണ്ടായിരുന്നു.")] },
+        { seg: [n("ആഇഷ ബീവിയാകട്ടെ നബി‍ﷺയുടെ "), b("ഏറ്റവും ഇഷ്ടപ്പെട്ട പത്നിയായിരുന്നു.")] },
+        { seg: [b("അതുകൊണ്ടാണ്"), n(" നബി‍ﷺക്ക് രോഗം കഠിനമായ അവസാന ദിവസങ്ങളിൽ "), b("ആഇഷ ബീവിയുടെ വീട്ടിൽ താമസിക്കാനുള്ള അനുവാദം"), n(" ബാക്കിയുള്ള ഭാര്യമാർ നൽകിയത്.")] },
+        { seg: [n("കാരണം, "), b("നബി‍ﷺക്ക് ആഇഷയോട് ഉണ്ടായിരുന്ന സ്നേഹം"), n(" ബാക്കിയുള്ള ഭാര്യമാർക്ക് അറിയാമായിരുന്നു.")] },
+        { seg: [n("അപ്പോൾ "), b("നബി‍ﷺക്ക് വേണ്ടി സേവനങ്ങൾ ചെയ്യുന്നതിന് മുൻഗണന കൊടുത്ത്"), n(" നമ്മുടെ ഉമ്മ ശവ്വാലിലെ 6 നോമ്പ് "), b("എടുത്തിട്ടില്ല"), n(" എന്നാണ് മനസ്സിലാകുന്നത്. അല്ലാഹുവാണ് ഏറ്റവും നന്നായി അറിയുന്നവൻ!")] },
+        { seg: [n("ഒരു സംശയവുമില്ല, നബി‍ﷺക്ക് വേണ്ടി സേവനങ്ങൾ ചെയ്യുക എന്നതും "), b("നബിയെ സന്തോഷിപ്പിക്കുക എന്നതും ഏറ്റവും ശ്രേഷ്ഠമായ ആരാധനയാണ്.")] },
+        { seg: [b("പല ശ്രേഷ്ഠതകളും ഒന്നിച്ച് വരുന്ന"), n(" മസ്അലകളുടെ കൂട്ടത്തിലാണ് ഇത് പെടുക.")] },
+        { seg: [n("ഇവിടെ "), b("രണ്ട് ശ്രേഷ്ഠതകൾ ഒന്നിച്ചു വന്നു."), n(" നബി‍ﷺക്ക് വേണ്ട സേവനങ്ങൾ ചെയ്തു കൊടുക്കലാണ് ഒന്ന്.")] },
+        { seg: [n("രണ്ടാമത്തേത് "), b("ശവ്വാലിലെ 6 നോമ്പുമാണ്.")] },
+        { seg: [n("അപ്പോൾ "), b("അതിൽ ഏറ്റവും ശ്രേഷ്ഠമായത്"), n(" ആയിഷ ബീവി തെരഞ്ഞെടുത്തു. അത് "), b("നബി‍ﷺയുമായി ബന്ധപ്പെട്ട കാര്യങ്ങൾ നിർവഹിക്കുക എന്നതാണ്.")] }
+      ]
+    }],
+    note: "ആയിഷ ബീവി(റ) ഒരു സുന്നത്ത് നോമ്പും എടുത്തിരുന്നില്ലെന്ന് ഇതിൽ നിന്ന് കിട്ടുകയില്ല. കാരണം, ശവ്വാലിലെ ആറു നോമ്പിന് മാത്രമാണ് റമദ്വാനിലെ നോമ്പുകൾ പൂർത്തിയാക്കണമെന്ന നിബന്ധനയുള്ളത്. അല്ലാഹുവാണ് ഏറ്റവും നന്നായി അറിയുന്നവൻ!"
+  },
+  {
+    no: "867", chapter: "ഇബാദത്ത്", subject: "ജുമുഅയും പെരുന്നാളും",
+    keys: "jumua eid perunnal velliyazhcha friday dhuhr ozhivakum",
+    q: "വെള്ളിയാഴ്ചയും പെരുന്നാളും ഒരേ ദിവസം വന്നാൽ, ജുമുഅ നമസ്കാരം നിർബന്ധമല്ലെന്ന് പറയുന്നത് ശരിയാണോ?",
+    scholarShort: "ശൈഖ് സഅദ് അൽ ഖഥ്ലാൻ",
+    blocks: [{
+      by: "സൗദി അറേബ്യയിലെ ജാമിഅത്തുൽ ഇമാമിലെയും ഇരു ഹറമുകളിലെയും മുദരിസായ ശൈഖ് സഅദ് ബ്നു തുർക്കി അൽ ഖഥ്ലാൻ (ഹഫിള്വഹുള്ളാഹ്) പറയുന്നു:",
+      url: "https://youtu.be/tHn2V0xJ40s", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+      points: [
+        { seg: [n("വെള്ളിയാഴ്ചയും ഈദും ഒരേ ദിവസം വന്നാൽ, പെരുന്നാൾ നിസ്കാരം നിർവഹിച്ചവർക്ക് "), b("ജുമുഅ നമസ്കാരം നിർബന്ധമല്ല.")] },
+        { seg: [b("നബിﷺയുടെ കാലത്ത്"), n(" വെള്ളിയാഴ്ചയും ഈദും ഒരേ ദിവസം വന്നിട്ടുണ്ട്.")] },
+        { seg: [n("അന്ന് ഈദ് ഖുത്വ്‌ബയിൽ "), b("നബിﷺ"), n(" പറഞ്ഞു: “നിങ്ങളുടെ ഈ ദിവസം നിങ്ങൾക്ക് "), b("രണ്ട് ഈദുകൾ (വെള്ളിയാഴ്ചയും പെരുന്നാളും)"), n(" ഒരുമിച്ചു വന്നിരിക്കുന്നു.")] },
+        { seg: [n("നമ്മുടെ കൂടെ ഈദ് നിസ്കാരത്തിൽ പങ്കെടുത്തവർ "), b("ജുമുഅ നിസ്കരിക്കണമെന്ന് നിർബന്ധമില്ല."), n(" എന്നാൽ, നമ്മൾ ഈദും ജുമുഅയും നിസ്കരിക്കുന്നതാണ്.” (അബൂദാവൂദ്: 1070, 1073)")] },
+        { seg: [n("അപ്പോൾ ഈദ് നിസ്കരിച്ച "), b("ഇമാമല്ലാത്ത ബാക്കിയുള്ളവർക്ക്"), n(" ജുമുഅ നിസ്കാരം നിർബന്ധമല്ല.")] },
+        { seg: [n("എന്നാൽ ജനങ്ങൾക്ക് "), b("ജുമുഅ നിസ്കാരത്തിന്"), n(" നേതൃത്വം നൽകൽ ഇമാമിന് നിർബന്ധമാണ്.")] },
+        { seg: [n("ഇനി ഒരാൾ ഈദ് നിസ്കാരവും ജുമുഅ നിസ്കാരവും നിർവഹിക്കുകയാണെങ്കിൽ, "), b("അതാണ് ഏറ്റവും നല്ലത്.")] },
+        { seg: [n("എന്നാൽ, ആരെങ്കിലും "), b("ഈദ് മാത്രം"), n(" നിസ്കരിക്കാനാണ് ഉദ്ദേശിക്കുന്നതെങ്കിൽ, "), b("അവർ ളുഹ്ർ നിസ്കരിക്കൽ നിർബന്ധമാണ്.")] },
+        { seg: [n("ജുമുഅ നിർബന്ധമല്ലെന്ന് പറഞ്ഞാൽ "), b("ളുഹ്റും ഒഴിവാകും എന്നല്ല അതിനർത്ഥം."), n(" മറിച്ച്, ളുഹ്ർ നിസ്കരിക്കൽ നിർബന്ധമാണ്.")] },
+        { seg: [n("എന്നാൽ, ഈ അവസ്ഥയിൽ അവരുടെ മേൽ "), b("ളുഹ്റ് ജമാഅത്തായിട്ട് നിർവഹിക്കുക എന്ന കാര്യം ഒഴിവാകും."), n(" അവർക്ക് അവരുടെ വീട്ടിൽ വെച്ച് ളുഹ്ർ നിസ്കരിക്കാവുന്നതാണ്.")] },
+        { seg: [n("ജുമുഅ നടക്കുന്ന ദിവസം ളുഹ്ർ ജമാഅത്തായി നിർവഹിക്കാൻ പള്ളികൾ തുറന്നു കൊടുക്കാൻ പറ്റില്ല. "), b("പള്ളികളിൽ നടക്കേണ്ടത് ജുമുഅ നമസ്കാരമാണ്.")] },
+        { seg: [n("ഈദ് നിസ്കാരം മാത്രം നിസ്കരിച്ച് മതിയാക്കുന്നവൻ "), b("വീട്ടിൽ വെച്ച് ളുഹ്ർ നിസ്കരിക്കണം.")] }
+      ]
+    }],
+    note: "വെള്ളിയാഴ്ചയും പെരുന്നാളും ഒരേ ദിവസം വന്നാൽ, ഈദ് നിസ്കരിച്ചവർക്ക് ജുമുഅ നമസ്കാരം നിർബന്ധമാണോ അല്ലേ എന്ന കാര്യത്തിൽ പണ്ഡിതന്മാർക്കിടയിൽ അഭിപ്രായ വ്യത്യാസമുണ്ട്. നിർബന്ധമല്ലെന്ന അഭിപ്രായപ്രകാരമുള്ള ഫത്‌വയും അതിനുള്ള തെളിവുമാണ് മുകളിൽ കൊടുത്തിട്ടുള്ളത്. അല്ലാഹുവാണ് ഏറ്റവും നന്നായി അറിയുന്നവൻ! ശൈഖുൽ ഇസ്‌ലാം ഇബ്നു തൈമിയ്യ(റ), ശൈഖ് ഇബ്നു ബാസ്(റ), ശൈഖ് ഇബ്നു ഉഥൈമീൻ(റ) തുടങ്ങിയവരൊക്കെ, ‘ഈദും ജുമുഅയും ഒരുമിച്ചു വന്നാൽ ജുമുഅ നിർബന്ധമല്ല’ എന്ന അഭിപ്രായക്കാരാണ്."
+  },
+  {
+    no: "866", chapter: "ക്വുർആൻ", subject: "ക്വുർആൻ പാരായണം",
+    keys: "yaseen yasin qalbul quran hadees dhaeef surah sreshtatha mulk ikhlas",
+    q: "സൂറത്തു യാസീൻ ക്വൽബുൽ ക്വുർആനാണ് (ക്വുർആനിൻ്റെ ഹൃദയമാണ്) എന്ന് പറയുന്ന ഹദീസ് സ്വീകാര്യയോഗ്യമാണോ?",
+    scholarShort: "ശൈഖ് അസീസ് അൽ അനിസി",
+    blocks: [{
+      by: "ശൈഖ് അസീസ് ഫർഹാൻ അൽ അനിസി (ഹഫിള്വഹുള്ളാഹ്) പറയുന്നു:",
+      url: "https://youtu.be/UyCmwrD5qFg", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+      points: [
+        { seg: [n("അല്ല. ആ ഹദീസ് നബി‍ﷺയിൽ നിന്ന് "), b("സ്വീകാര്യയോഗ്യമായി"), n(" വന്നിട്ടില്ല.")] },
+        { seg: [n("ഇതിൻ്റെ കൂടെ ഒരു കാര്യം കൂടി, സൂറത്ത് യാസീനിന് "), b("പ്രത്യേക ശ്രേഷ്ഠത"), n(" അറിയിക്കുന്ന "), b("ഒരു ഹദീസും"), n(" സ്വീകാര്യയോഗ്യമായി വന്നിട്ടില്ല.")] },
+        { seg: [n("മരണാസന്നനായ ആളുകൾക്ക് നിങ്ങൾ "), b("സൂറത്തു യാസീൻ"), n(" പാരായണം ചെയ്തുകൊടുക്കുക എന്ന നിലക്ക് വന്നിട്ടുള്ള ഹദീസും "), b("ള്വഈഫ്(ദുർബലം)"), n(" ആണ്.")] },
+        { seg: [n("അതിനർത്ഥം സൂറത്തു യാസീനിന് ഒരു വിലയും ഇല്ല എന്നല്ല. "), b("മറിച്ച് അത് ക്വുർആനിന്റെ ഭാഗമാണ്. ക്വുർആൻ മുഴുവൻ മഹത്വമേറിയതാണല്ലോ.")] },
+        { seg: [n("സൂറത്തുൽ മുൽക്കിനോ ഇഖ്ലാസിനോ ബക്വറക്കോ ആലു ഇംറാനിനോ ഒക്കെ പ്രത്യേകത ഉള്ളതായി അറിയിക്കുന്ന ഹദീസുകൾ വന്നിട്ടുണ്ട്. എന്നാൽ, "), b("സൂറത്ത് യാസീനിൻ്റെ വിഷയത്തിൽ അങ്ങനെ സ്വീകാര്യയോഗ്യമായ ഹദീസുകൾ വന്നിട്ടില്ല.")] }
+      ]
+    }],
+    note: "ഏതെങ്കിലും ഒരു സൂറത്തിനോ ആയത്തിനോ എന്തെങ്കിലും പ്രത്യേക ശ്രേഷ്ഠത ഉണ്ടെന്ന് പറയണമെങ്കിൽ, അത് അല്ലാഹുവും റസൂലും നമുക്ക് അറിയിച്ചു തരണം. സൂറത്തു യാസീനിന്റെ വിഷയത്തിൽ അങ്ങനെയൊന്നും സ്വീകാര്യയോഗ്യമായ നിലക്ക് വന്നിട്ടില്ല. അല്ലാഹുവാണ് ഏറ്റവും നന്നായി അറിയുന്നവൻ!"
+  },
+  {
+    no: "863", chapter: "അഖീദ", subject: "വിശ്വാസകാര്യങ്ങൾ",
+    keys: "thouheed thawheed marana thettukal papam naraka swargam sins",
+    q: "തൗഹീദുള്ള ഒരാൾ മരണപ്പെട്ടു. എന്നാൽ അയാൾ സ്ഥിരമായി ചെയ്തിരുന്ന ചില തെറ്റുകളുണ്ടായിരുന്നു. അയാളുടെ വിധിയെന്താണ്?",
+    scholarShort: "ശൈഖ് അബ്ദുൽ അസീസ് ആലു ശൈഖ്",
+    blocks: [{
+      by: "സഊദി അറേബ്യയുടെ മുൻ ഗ്രാന്റ് മുഫ്തിയായിരുന്ന ശൈഖ് അബ്ദുൽ അസീസ് ആലു ശൈഖ് (റഹിമഹുല്ലാഹ്) പറയുന്നു:",
+      url: "https://youtu.be/GmYk-KW0S4E", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+      points: [
+        { seg: [n("അല്ലാഹുവിന്റെ (മശീഅതിൻ്റെ) "), b("ഉദ്ദേശത്തിനനുസരിച്ചാണ് അയാളുടെ കാര്യം.")] },
+        { seg: [b("അല്ലാഹു ഉദ്ദേശിക്കുകയാണെങ്കിൽ"), n(" അയാൾക്ക് അവൻ പൊറുത്തുകൊടുക്കും.")] },
+        { seg: [n("അല്ലെങ്കിൽ അയാളുടെ "), b("പാപങ്ങളുടെ തോതനുസരിച്ച് അല്ലാഹു അയാളെ ശിക്ഷിക്കും."), n(" (അതിനുശേഷം അയാളെ നരകത്തിൽ നിന്ന് മോചിപ്പിക്കും).")] },
+        { seg: [b("തൗഹീദ് ഉള്ളവരുടെയൊക്കെ പര്യവസാനം സുഖാനുഭൂതികളുടെ സ്വർഗ്ഗമാണ്.")] }
+      ]
+    }],
+    note: "തൗഹീദുള്ള ഒരാളും കാലാകാലം നരകത്തിൽ കിടക്കുകയില്ല. തൗഹീദ് ഇല്ലാത്തവർ ഒരിക്കലും നരകത്തിൽ നിന്ന് പുറത്തുവരികയുമില്ല. അല്ലാഹു കാത്തു രക്ഷിക്കട്ടെ!"
+  },
+  {
+    no: "861", chapter: "ഇബാദത്ത്", subject: "നമസ്കാരം",
+    keys: "mamoom imam ruku sujood thakbeer prarambha prarthana jamaath",
+    q: "ഇമാം റുകൂഇലോ സുജൂദിലോ ആയിരിക്കെ നിസ്കാരത്തിലേക്ക് വന്ന മഅ്മൂം പ്രാരംഭ പ്രാർഥന ചൊല്ലിയിട്ടാണോ ഇമാമിനെ പിന്തുടരേണ്ടത്?",
+    scholarShort: "ശൈഖ് സ്വാലിഹ് അൽ ഫൗസാൻ",
+    blocks: [{
+      by: "സഊദി അറേബ്യയുടെ ഗ്രാന്റ് മുഫ്തിയായ ശൈഖ് സ്വാലിഹ് അൽ ഫൗസാൻ (ഹഫിള്വഹുല്ലാഹ്) പറയുന്നു:",
+      url: "https://youtu.be/wJN7wMMs6VU", linkLabel: "അറബി മൂലം കേൾക്കാൻ",
+      points: [
+        { seg: [n("നിങ്ങൾ നിസ്കാരത്തിലേക്ക് വരുമ്പോൾ ഇമാം റുകൂഇലാണെങ്കിൽ, "), b("നിന്നുകൊണ്ട് തക്ബീറത്തുൽ ഇഹ്റാം ചൊല്ലി നിങ്ങൾക്ക് നേരെ റുകൂഇലേക്ക് പോകാവുന്നതാണ്.")] },
+        { seg: [n("പ്രാരംഭ പ്രാർഥന ചൊല്ലാൻ കാത്തിരുന്നിട്ട് "), b("ഇമാമിന്റെ കൂടെ റുകൂഇൽ ചേരുന്നത് വൈകിപ്പിക്കേണ്ടതില്ല.")] }
+      ]
+    }],
+    note: "ഇമാമിൻ്റെ കൂടെ റുകൂഅ് കിട്ടിയാൽ ഒരാൾക്ക് റക്അത് കിട്ടും. ഇമാം റുകൂഇൽ നിന്ന് നടുനിവർത്തി നിൽക്കുന്നതിനു മുമ്പ് റുകൂഇൽ ചേർന്നാലാണ് റക്അത്ത് കിട്ടിയതായി പരിഗണിക്കുക. പ്രാരംഭ പ്രാർഥന ചൊല്ലാൻ കാത്തു നിന്നാൽ ആ അവസരം നഷ്ടപ്പെടും. അല്ലാഹുവാണ് ഏറ്റവും നന്നായി അറിയുന്നവൻ."
+  }
+];
+
+const CHAPTER_ICONS = {
+  "അഖീദ": "ph-sparkle",
+  "ഇബാദത്ത്": "ph-hands-praying",
+  "മുആമലാത്ത്": "ph-handshake",
+  "ആദാബ്": "ph-heart",
+  "ക്വുർആൻ": "ph-book-open",
+  "കുടുംബം": "ph-users-three",
+  "അനുബന്ധം": "ph-bookmark-simple"
+};
+
+const COLLECTIONS = [
+  { label: "നമസ്കാരം", subject: "നമസ്കാരം" },
+  { label: "ശുദ്ധി", subject: "ത്വഹാറത്ത്" },
+  { label: "നോമ്പ്", subject: "നോമ്പ്" },
+  { label: "ഹജ്ജും ഉംറയും", subject: "ഹജ്ജും ഉംറയും" },
+  { label: "ക്വുർആൻ", subject: "ക്വുർആൻ പാരായണം" },
+  { label: "വിവാഹം", subject: "വിവാഹം" }
+];
+
+class Component extends DCLogic {
+  state = { screen: "home", query: "", typed: "", filter: null, scholar: null, currentNo: null, saved: [], copied: false, copiedFull: false, all: null, page: 1, theme: "dark", indexAsc: false, jump: "", jumpMsg: "" };
+
+  componentDidMount() {
+    try {
+      const raw = window.localStorage.getItem("c2a-saved");
+      if (raw) this.setState({ saved: JSON.parse(raw) });
+    } catch (e) { /* storage unavailable */ }
+    try {
+      const th = window.localStorage.getItem("c2a-theme");
+      if (th) this.applyTheme(th);
+    } catch (e) { /* storage unavailable */ }
+    const load = () => {
+      const base = window.__FATWAS;
+      if (!base || !base.length) return false;
+      const extra = window.__FATWAS_EXTRA || [];
+      const known = {};
+      base.forEach(f => { known[f.no] = 1; });
+      const rows = base.concat(extra.filter(f => !known[f.no]))
+        .sort((a, b) => Number(b.no) - Number(a.no));
+      rows.forEach(f => { f._q = f.q; });
+      this.setState({ all: rows });
+      return true;
+    };
+    if (!load()) {
+      let tries = 0;
+      const iv = window.setInterval(() => { if (load() || ++tries > 40) window.clearInterval(iv); }, 100);
+    }
+  }
+
+  db() { return this.state.all || DATA; }
+
+  jumpTo(v) {
+    const n = String(v || "").replace(/[^0-9]/g, "");
+    if (!n) { this.setState({ jumpMsg: "Enter a fatwa number." }); return; }
+    const all = this.state.all || [];
+    const hit = all.filter(f => Number(f.no) === Number(n))[0];
+    if (hit) { this.setState({ jump: "", jumpMsg: "" }); this.open(hit.no); }
+    else this.setState({ jumpMsg: "Fatwa " + n + " is not in the archive." });
+  }
+
+  applyTheme(t) {
+    const root = window.document.documentElement;
+    if (t === "light") root.setAttribute("data-theme", "light");
+    else root.removeAttribute("data-theme");
+    this.setState({ theme: t });
+  }
+
+  text(f) {
+    const pts = f.blocks.map(bl => bl.by + " " + bl.points.map(p => p.seg.map(s => s.t).join("")).join(" ")).join(" ");
+    return (f.no + " " + f.q + " " + f.subject + " " + f.chapter + " " + f.keys + " " + f.scholarShort + " " + pts + " " + f.note).toLowerCase();
+  }
+
+  stem(w) { return w.replace(/[\u0d4d\u0d02]+$/, ""); }
+
+  terms(q) {
+    return String(q || "").toLowerCase().replace(/[?."'\u201c\u201d,()]/g, " ")
+      .split(/\s+/).filter(w => w.length > 1 || /^[0-9]$/.test(w)).map(w => this.stem(w));
+  }
+
+  score(f, ws) {
+    if (!ws.length) return 1;
+    const q = (f._q || f.q || "").toLowerCase();
+    if (!f._t) f._t = this.text(f);
+    const body = f._t;
+    let total = 0;
+    for (const w of ws) {
+      let s = 0;
+      if (/^[0-9]+$/.test(w)) { if (f.no === w) s = 400; else if (f.no.indexOf(w) === 0) s = 60; }
+      if (!s && q.indexOf(w) > -1) s = 40;
+      if (!s && (f.subject || "").toLowerCase().indexOf(w) > -1) s = 30;
+      if (!s && (f.scholarShort || "").toLowerCase().indexOf(w) > -1) s = 26;
+      if (!s && (f.keys || "").toLowerCase().indexOf(w) > -1) s = 22;
+      if (!s && body.indexOf(w) > -1) s = 8;
+      if (!s) return 0;
+      total += s;
+    }
+    if (ws.length > 1 && q.indexOf(ws.join(" ")) > -1) total += 50;
+    return total;
+  }
+
+  found(q, filter, scholar) {
+    const ws = this.terms(q);
+    const pool = this.db().filter(f => (!filter || f.subject === filter) && (!scholar || f.scholarShort === scholar));
+    if (!ws.length) return pool;
+    const hits = [];
+    for (const f of pool) { const s = this.score(f, ws); if (s) hits.push([s, f]); }
+    hits.sort((a, b) => b[0] - a[0] || Number(b[1].no) - Number(a[1].no));
+    return hits.map(h => h[1]);
+  }
+
+  snippet(f, q) {
+    const ws = this.terms(q);
+    if (!ws.length) return "";
+    const flat = f.blocks.map(bl => bl.points.map(p => p.seg.map(s => s.t).join("")).join(" ")).join(" ");
+    const low = flat.toLowerCase();
+    for (const w of ws) {
+      const i = low.indexOf(w);
+      if (i > -1) {
+        const from = Math.max(0, i - 60);
+        return (from ? "… " : "") + flat.slice(from, from + 190).trim() + " …";
+      }
+    }
+    return flat.slice(0, 170).trim() + " …";
+  }
+
+  fullText(f) {
+    const L = [];
+    L.push("🕯️ *Call to Allah - Fatwa : " + f.no + "*🕯️");
+    L.push("🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳");
+    L.push("");
+    L.push(" _ചോദ്യം:_ ");
+    L.push("*❓ " + f.q + "*");
+    L.push("");
+    L.push(" *ഉത്തരം:* ");
+    f.blocks.forEach((bl, i) => {
+      if (i > 0) L.push("");
+      L.push("🎙️ _" + bl.by.replace(/:$/, "") + ":_ ");
+      L.push("");
+      bl.points.forEach(p => {
+        L.push("🔳 " + p.seg.map(s => (s.b ? "*" + s.t.trim() + "*" : s.t)).join("").replace(/\s+/g, " ").trim());
+        L.push("");
+      });
+      L.push("📗 _പ്രസ്തുത ഫത്‌വയുടെ അറബി " + (bl.linkLabel.indexOf("കേൾ") > -1 ? "കേൾക്കാൻ" : "വായിക്കാൻ") + ":_");
+      L.push(bl.url);
+    });
+    if (f.note) {
+      L.push("");
+      L.push("➖➖➖➖➖➖➖➖➖");
+      L.push("📝 *വിവർത്തകൻ:* ");
+      L.push(" _" + f.note + "_ ");
+    }
+    L.push("");
+    L.push("➖➖➖➖➖➖➖➖➖");
+    L.push("📝 *ആശയ വിവർത്തനം:*");
+    L.push("*മുജാഹിദ് അൽ ഹികമി പറവണ്ണ*");
+    L.push("_(ജാമിഅ അൽ ഹിന്ദ് അൽ ഇസ്‌ലാമിയ്യ - മിനിഊട്ടി)_");
+    L.push("➖➖➖➖➖➖➖➖➖");
+    L.push("");
+    L.push("📕 *മുൻ കഴിഞ്ഞ ഫത്‌വകൾക്ക് ചാനൽ സന്ദർശിക്കൂ, സബ്സ്ക്രൈബ് ചെയ്യൂ:-*");
+    L.push("https://t.me/call2allah");
+    L.push("🪀 *ദിവസവും സലഫി പണ്ഡിതന്മാരുടെ ഫത്‌വകൾ ലഭിക്കാൻ:*");
+    L.push("https://chat.whatsapp.com/HvC5O5PbkPw8IXKMKValuM");
+    L.push("*PLEASE SHARE MAXIMUM* ");
+    L.push("▌║█║▌║▌║║▌║▌▌║│█║▌");
+    return L.join("\n");
+  }
+
+  open = (no) => { this.setState({ screen: "fatwa", currentNo: no, typed: "", copied: false, copiedFull: false }); window.scrollTo(0, 0); };
+
+  card = (f) => Object.assign({}, f, { onOpen: () => this.open(f.no) });
+
+  go = (screen) => () => { this.setState({ screen: screen }); window.scrollTo(0, 0); };
+
+  renderVals() {
+    const st = this.state;
+    const D = this.db();
+    const PER = 25;
+    const results = this.found(st.query, st.filter, st.scholar);
+    const shown = results.slice(0, st.page * PER);
+    const current = D.filter(f => f.no === st.currentNo)[0] || D[0];
+    const saved = st.saved;
+    const isSavedNow = saved.indexOf(current.no) > -1;
+
+    const typed = st.typed.trim();
+    const sugg = typed ? this.found(typed, null, null).slice(0, 5).map(this.card) : [];
+
+    const counts = {}, chapters = [], scholars = {};
+    D.forEach(f => {
+      counts[f.subject] = (counts[f.subject] || 0) + 1;
+      scholars[f.scholarShort] = (scholars[f.scholarShort] || 0) + 1;
+      let ch = chapters.filter(c => c.name === f.chapter)[0];
+      if (!ch) { ch = { name: f.chapter, subs: [], count: 0 }; chapters.push(ch); }
+      ch.count += 1;
+      if (ch.subs.indexOf(f.subject) < 0) ch.subs.push(f.subject);
+    });
+
+    const pickSubject = (subject) => () => {
+      this.setState({ screen: "results", filter: subject, scholar: null, query: "", typed: "", page: 1 });
+      window.scrollTo(0, 0);
+    };
+    const pickScholar = (name) => () => {
+      this.setState({ screen: "results", scholar: st.scholar === name ? null : name, filter: null, query: "", typed: "", page: 1 });
+      window.scrollTo(0, 0);
+    };
+
+    const blocks = current.blocks.map(bl => Object.assign({}, bl, {
+      hasUrl: !!bl.url,
+      linkLabel: bl.linkLabel && bl.linkLabel.indexOf("കേൾ") > -1 ? "Listen to the Arabic original" : "Read the Arabic original",
+      points: bl.points.map(p => ({
+        seg: p.seg.map(s => ({ t: s.t, w: s.b ? 700 : 400, c: s.b ? "var(--color-text)" : "var(--color-neutral-300)" }))
+      }))
+    }));
+
+    return {
+      isHome: st.screen === "home",
+      isResults: st.screen === "results",
+      isSubjects: st.screen === "subjects",
+      isIndex: st.screen === "index",
+      navIndexColor: st.screen === "index" ? "var(--color-accent-300)" : "var(--color-neutral-400)",
+      indexCountLabel: D.length + " fatwas, numbers " + (D.length ? Math.min.apply(null, D.map(f => Number(f.no))) + "–" + Math.max.apply(null, D.map(f => Number(f.no))) : "—") + ".",
+      indexList: D.slice().sort((a, b) => st.indexAsc ? Number(a.no) - Number(b.no) : Number(b.no) - Number(a.no)).map(this.card),
+      indexOrderLabel: st.indexAsc ? "Newest first" : "Oldest first",
+      toggleIndexOrder: () => this.setState({ indexAsc: !st.indexAsc }),
+      jumpVal: st.jump,
+      jumpMsg: st.jumpMsg,
+      onJump: (e) => this.setState({ jump: e.target.value, jumpMsg: "" }),
+      onJumpKey: (e) => { if (e.key === "Enter") this.jumpTo(st.jump); },
+      jumpGo: () => this.jumpTo(st.jump),
+      isSaved: st.screen === "saved",
+      isFatwa: st.screen === "fatwa",
+      navHomeColor: st.screen === "home" ? "var(--color-accent-300)" : "var(--color-neutral-400)",
+      navSubjColor: st.screen === "subjects" ? "var(--color-accent-300)" : "var(--color-neutral-400)",
+      navSavedColor: st.screen === "saved" ? "var(--color-accent-300)" : "var(--color-neutral-400)",
+      savedCountLabel: saved.length ? "(" + saved.length + ")" : "",
+      themeLabel: st.theme === "light" ? "Dark" : "Light",
+      themeTitle: st.theme === "light" ? "Switch to dark" : "Switch to light",
+      toggleTheme: () => {
+        const next = st.theme === "light" ? "dark" : "light";
+        try { window.localStorage.setItem("c2a-theme", next); } catch (e) { /* ignore */ }
+        this.applyTheme(next);
+      },
+
+      query: st.typed,
+      onQuery: (e) => this.setState({ typed: e.target.value }),
+      onKey: (e) => { if (e.key === "Enter") this.setState({ screen: "results", query: st.typed, filter: null, scholar: null, page: 1 }); },
+      runSearch: () => { this.setState({ screen: "results", query: st.typed, filter: null, scholar: null, page: 1 }); window.scrollTo(0, 0); },
+      suggestions: sugg,
+      hasSuggestions: sugg.length > 0,
+
+      collections: COLLECTIONS.map(c => ({ label: c.label, onOpen: pickSubject(c.subject) })),
+      recent: D.slice(0, 6).map(this.card),
+      totalLabel: D.length + " fatwas",
+      showAll: () => { this.setState({ screen: "results", query: "", filter: null, scholar: null, typed: "", page: 1 }); window.scrollTo(0, 0); },
+
+      chapterList: chapters.map(ch => ({
+        name: ch.name, count: ch.count, icon: CHAPTER_ICONS[ch.name] || "ph-bookmark-simple", onOpen: this.go("subjects"),
+        subs: ch.subs.map(s => ({ name: s, count: counts[s], onPick: pickSubject(s) }))
+      })),
+      scholarList: Object.keys(scholars).sort((a, b) => scholars[b] - scholars[a]).slice(0, 8).map(k => ({ name: k, count: scholars[k], onPick: pickScholar(k) })),
+      scholarFilterList: Object.keys(scholars).sort((a, b) => scholars[b] - scholars[a]).slice(0, 12).map(k => ({
+        name: k, count: scholars[k], onPick: pickScholar(k),
+        color: st.scholar === k ? "var(--color-accent-300)" : "var(--color-neutral-400)"
+      })),
+
+      filterList: Object.keys(counts).sort((a, b) => counts[b] - counts[a]).map(name => ({
+        name: name, count: counts[name], onPick: pickSubject(name),
+        color: st.filter === name ? "var(--color-accent-300)" : "var(--color-neutral-400)"
+      })),
+      allFilterColor: st.filter ? "var(--color-neutral-400)" : "var(--color-accent-300)",
+      clearFilter: () => this.setState({ filter: null, scholar: null, page: 1 }),
+      results: shown.map(f => Object.assign({}, this.card(f), { snip: this.snippet(f, st.query) })),
+      noResults: results.length === 0,
+      hasMore: results.length > shown.length,
+      moreLabel: "Load more (" + (results.length - shown.length) + " left)",
+      loadMore: () => this.setState({ page: st.page + 1 }),
+      resultLabel: (st.filter ? st.filter + " · " : "") + (st.scholar ? st.scholar + " · " : "") +
+        results.length + " fatwas" + (st.query ? " · “" + st.query + "”" : "") +
+        (st.query && results.length ? " · sorted by relevance" : ""),
+      noResultsTip: st.query ? "No fatwa matches every word in “" + st.query + "”. Try one keyword, a fatwa number, or browse by subject." : "",
+
+      current: Object.assign({}, current, { blocks: blocks }),
+      hasNote: !!current.note,
+      related: D.filter(f => f.subject === current.subject && f.no !== current.no).slice(0, 4).map(this.card),
+      saveLabel: isSavedNow ? "Saved ✓" : "Save",
+      toggleSaveCurrent: () => {
+        const next = isSavedNow ? saved.filter(r => r !== current.no) : saved.concat([current.no]);
+        try { window.localStorage.setItem("c2a-saved", JSON.stringify(next)); } catch (e) { /* ignore */ }
+        this.setState({ saved: next });
+      },
+      copyFullLabel: st.copiedFull ? "Copied ✓" : "Copy full fatwa",
+      copyFull: () => {
+        const txt = this.fullText(current);
+        const done = () => this.setState({ copiedFull: true, copied: false });
+        try {
+          window.navigator.clipboard.writeText(txt).then(done, () => {
+            const ta = window.document.createElement("textarea");
+            ta.value = txt; ta.style.position = "fixed"; ta.style.opacity = "0";
+            window.document.body.appendChild(ta); ta.select();
+            window.document.execCommand("copy");
+            window.document.body.removeChild(ta); done();
+          });
+        } catch (e) { done(); }
+      },
+      shareFull: () => {
+        const txt = this.fullText(current);
+        if (window.navigator.share) window.navigator.share({ text: txt });
+        else window.open("https://wa.me/?text=" + window.encodeURIComponent(txt), "_blank");
+      },
+      copyLabel: st.copied ? "Copied ✓" : "Copy link",
+      copyLink: () => {
+        const url = window.location.href.split("#")[0] + "#fatwa-" + current.no;
+        try { window.navigator.clipboard.writeText(url); } catch (e) { /* ignore */ }
+        this.setState({ copied: true });
+      },
+      printPage: () => window.print(),
+
+      savedList: D.filter(f => saved.indexOf(f.no) > -1).map(this.card),
+      savedEmpty: saved.length === 0,
+
+      goHome: () => { this.setState({ screen: "home", typed: "" }); window.scrollTo(0, 0); },
+      goSubjects: this.go("subjects"),
+      goIndex: this.go("index"),
+      goSaved: this.go("saved"),
+      goBack: () => { this.setState({ screen: st.query || st.filter || st.scholar ? "results" : "home" }); window.scrollTo(0, 0); }
+    };
+  }
+}
+</script>
+</body>
+</html>

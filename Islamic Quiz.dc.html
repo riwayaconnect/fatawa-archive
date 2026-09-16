@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-917fe29e-d065-4294-b674-06348cbefec4/styles.css">
+<script src="_ds/nocturne-917fe29e-d065-4294-b674-06348cbefec4/_ds_bundle.js"></script>
+<script src="data/quiz.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam:wght@400;500;600&family=Manjari:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #262a3a; --color-surface: #2f3446; --color-text: #eeedf5;
+    --color-divider: color-mix(in srgb, #eeedf5 16%, transparent);
+    --color-neutral-100: #f7f7fb; --color-neutral-200: #e2e2ec; --color-neutral-300: #cfd0dd;
+    --color-neutral-400: #b0b2c4; --color-neutral-500: #9a9cb0; --color-neutral-600: #83869c;
+    --color-neutral-700: #6b6e85; --color-neutral-800: #3d4256; --color-neutral-900: #313648;
+    --color-accent: #9184d9; --color-accent-100: #f3f1fd; --color-accent-200: #ddd7fa;
+    --color-accent-300: #c4bbf3; --color-accent-400: #ada2ea; --color-accent-500: #9184d9;
+    --color-accent-600: #7466c2; --color-accent-700: #574a95; --color-accent-800: #3f3670;
+    --color-accent-900: #2e2853; --ok: #7cc79f; --no: #dd9494;
+  }
+  :root[data-theme="light"] {
+    --color-bg: #f7f8fd; --color-surface: #ffffff; --color-text: #1c1e2b;
+    --color-divider: color-mix(in srgb, #1c1e2b 14%, transparent);
+    --color-neutral-100: #1c1e2b; --color-neutral-200: #292b31; --color-neutral-300: #3f424d;
+    --color-neutral-400: #4c5060; --color-neutral-500: #565a6a; --color-neutral-600: #616574;
+    --color-neutral-700: #6b6f7e; --color-neutral-800: #e4e7f5; --color-neutral-900: #f3f5fe;
+    --color-accent: #6255b0; --color-accent-100: #2b2741; --color-accent-200: #423a6a;
+    --color-accent-300: #5d5294; --color-accent-400: #574c8c; --color-accent-500: #6d61a8;
+    --color-accent-600: #b5abfc; --color-accent-700: #d2cefd; --color-accent-800: #e7e5fe;
+    --color-accent-900: #f5f4ff; --ok: #2f7d55; --no: #a04747;
+  }
+  body { margin: 0; background: var(--color-bg); font-family: "Manjari", "Noto Serif Malayalam", system-ui, sans-serif; }
+  a { color: var(--color-accent-300); text-decoration: none; }
+  a:hover { color: var(--color-accent-200); }
+  ::selection { background: var(--color-accent-800); }
+  button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; background: radial-gradient(1100px 480px at 10% -12%, var(--color-accent-900) 0%, var(--color-bg) 62%); color: var(--color-text); padding-bottom: 40px">
+
+  <header style="padding: 15px clamp(18px, 4vw, 40px); border-bottom: 1px solid var(--color-divider)">
+    <div style="max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 16px; flex-wrap: wrap">
+      <div onClick="{{ goHome }}" style="flex: none; display: flex; align-items: baseline; gap: 11px; cursor: pointer">
+        <span style="font-family: Inter, sans-serif; font-size: 21px; font-weight: 600; line-height: 1.5; letter-spacing: -0.01em; white-space: nowrap">Just a Minute</span>
+        <span style="font-family: Inter, sans-serif; font-size: 12.5px; color: var(--color-neutral-500); letter-spacing: 0.04em; white-space: nowrap">ISLAMIC QUIZ</span>
+      </div>
+      <nav style="display: flex; gap: 2px; margin-left: auto; align-items: center">
+        <button onClick="{{ goHome }}" style="background: none; border: 0; color: {{ navHomeColor }}; font-family: inherit; font-size: 15px; padding: 8px 12px; border-radius: var(--radius-sm); cursor: pointer" style-hover="background: var(--color-neutral-900)">Home</button>
+        <button onClick="{{ goProgress }}" style="background: none; border: 0; color: {{ navProgColor }}; font-family: inherit; font-size: 15px; padding: 8px 12px; border-radius: var(--radius-sm); cursor: pointer" style-hover="background: var(--color-neutral-900)">Progress</button>
+        <button onClick="{{ toggleTheme }}" title="{{ themeTitle }}" style="background: none; border: 1px solid var(--color-neutral-800); color: var(--color-neutral-300); font-family: inherit; font-size: 14px; padding: 7px 13px; margin-left: 6px; border-radius: var(--radius-sm); cursor: pointer" style-hover="border-color: var(--color-accent-600); color: var(--color-accent-300)">{{ themeLabel }}</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HOME -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main style="max-width: 900px; margin: 0 auto; padding: clamp(34px, 6vw, 60px) clamp(18px, 4vw, 40px) 0">
+    <p style="margin: 0 0 14px; font-family: Inter, sans-serif; font-size: 12.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-400)">Just a Minute · ക്വിസ്</p>
+    <h1 style="margin: 0; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: clamp(28px, 5.2vw, 44px); line-height: 1.42; max-width: 24ch; text-wrap: pretty">ഒരു മിനിറ്റിൽ ഒരു ചോദ്യം, അറിവിലേക്ക് ഒരു പടി</h1>
+    <p style="margin: 18px 0 0; font-size: clamp(15.5px, 1.7vw, 17.5px); line-height: 1.9; color: var(--color-neutral-400); max-width: 58ch">ഓരോ ചോദ്യത്തിനും ഉത്തരത്തോടൊപ്പം പ്രമാണവും അവലംബവും. ഉദ്ദേശ്യം മത്സരമല്ല, പഠനമാണ്. Each answer comes with its evidence and source. The aim is learning, not scoring over anyone.</p>
+
+    <div class="card" style="margin-top: 34px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
+      <span style="font-family: Inter, sans-serif; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-400)">{{ bankLabel }}</span>
+      <h2 style="margin: 0; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: 23px">ഒരു റൗണ്ട് തുടങ്ങാം</h2>
+      <p style="margin: 0; font-size: 15.5px; line-height: 1.85; color: var(--color-neutral-400)">ഓരോ ചോദ്യത്തിനും ഒരു മിനിറ്റ്. ഉത്തരം നൽകിയ ഉടനെ ശരിയുത്തരവും അവലംബവും കാണാം. One minute per question; the answer and its source appear as soon as you choose.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 4px">
+        <button onClick="{{ startRound }}" class="btn btn-primary" style="font-family: inherit; font-size: 15.5px; cursor: pointer">Start a round</button>
+        <button onClick="{{ startReview }}" class="btn btn-secondary" style="font-family: inherit; font-size: 15.5px; cursor: pointer">Read without the clock</button>
+      </div>
+      <p style="margin: 4px 0 0; font-family: Inter, sans-serif; font-size: 13px; color: var(--color-neutral-500)">{{ bestLabel }}</p>
+    </div>
+
+    <div class="card" style="margin-top: 18px; padding: 18px 20px">
+      <p style="margin: 0 0 7px; font-family: Inter, sans-serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-300)">Under construction</p>
+      <p style="margin: 0; font-size: 14px; line-height: 1.75; color: var(--color-neutral-300); max-width: 68ch">More questions are added regularly. Corrections and suggestions are very welcome — they make this accurate and easy to use. <a href="https://wa.me/917994514263" target="_blank" rel="noopener">WhatsApp ↗</a></p>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- PLAY -->
+  <sc-if value="{{ isPlay }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 820px; margin: 0 auto; padding: clamp(24px, 4vw, 40px) clamp(18px, 4vw, 40px) 0">
+    <div style="display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: baseline; margin-bottom: 14px">
+      <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--color-neutral-500)">{{ progressLabel }}</span>
+      <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--color-accent-300); margin-left: auto">{{ tallyLabel }}</span>
+      <button onClick="{{ leaveRound }}" style="background: none; border: 0; color: var(--color-neutral-500); font-family: inherit; font-size: 13.5px; padding: 0; cursor: pointer" style-hover="color: var(--color-accent-300)">End round</button>
+    </div>
+
+    <sc-if value="{{ timed }}" hint-placeholder-val="{{ false }}">
+    <div style="height: 4px; border-radius: 2px; background: var(--color-neutral-900); overflow: hidden; margin-bottom: 24px">
+      <div style="height: 100%; width: {{ barWidth }}; background: {{ barColor }}; transition: width 0.4s linear"></div>
+    </div>
+    </sc-if>
+
+    <p style="margin: 0 0 10px; font-family: Inter, sans-serif; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-400)">{{ qKicker }}</p>
+    <h2 style="margin: 0; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: clamp(21px, 3.4vw, 28px); line-height: 1.65; text-wrap: pretty">{{ qText }}</h2>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 26px">
+      <sc-for list="{{ options }}" as="op" hint-placeholder-count="4">
+        <button onClick="{{ op.onPick }}" style="text-align: left; background: {{ op.bg }}; border: 1px solid {{ op.border }}; border-radius: var(--radius-md); padding: 15px 18px; font-family: inherit; cursor: {{ op.cursor }}; display: flex; gap: 14px; align-items: baseline" style-hover="border-color: var(--color-accent-500)">
+          <span style="flex: none; font-family: Inter, sans-serif; font-size: 12.5px; color: var(--color-accent-400)">{{ op.letter }}</span>
+          <span style="min-width: 0; font-size: 17px; line-height: 1.65; color: {{ op.fg }}">{{ op.text }}</span>
+          <span style="margin-left: auto; font-family: Inter, sans-serif; font-size: 14px; color: {{ op.markColor }}">{{ op.mark }}</span>
+        </button>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ revealed }}" hint-placeholder-val="{{ false }}">
+    <div class="card" style="margin-top: 22px; padding: 20px">
+      <p style="margin: 0 0 10px; font-family: Inter, sans-serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: {{ verdictColor }}">{{ verdictLabel }}</p>
+      <p style="margin: 0 0 14px; font-size: 17px; line-height: 1.7; color: var(--color-neutral-200)">{{ answerLine }}</p>
+      <sc-if value="{{ hasSource }}" hint-placeholder-val="{{ true }}">
+        <p style="margin: 0 0 6px; font-family: Inter, sans-serif; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600)">അവലംബം · Source</p>
+        <p style="margin: 0; font-size: 16px; line-height: 1.95; color: var(--color-neutral-300)">{{ sourceText }}</p>
+      </sc-if>
+      <sc-if value="{{ hasUrl }}" hint-placeholder-val="{{ false }}">
+        <a href="{{ sourceUrl }}" target="_blank" rel="noopener" style="display: inline-flex; margin-top: 14px; font-size: 14px; padding: 8px 14px; border: 1px solid var(--color-neutral-800); border-radius: var(--radius-sm)" style-hover="border-color: var(--color-accent-600)">അവലംബം കാണാൻ ↗</a>
+      </sc-if>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px">
+      <button onClick="{{ nextQ }}" class="btn btn-primary" style="font-family: inherit; font-size: 15.5px; cursor: pointer">{{ nextLabel }}</button>
+      <button onClick="{{ copyQ }}" class="btn btn-ghost" style="font-family: inherit; font-size: 15.5px; cursor: pointer">{{ copyLabel }}</button>
+    </div>
+    </sc-if>
+  </main>
+  </sc-if>
+
+  <!-- RESULT -->
+  <sc-if value="{{ isResult }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 760px; margin: 0 auto; padding: clamp(30px, 5vw, 54px) clamp(18px, 4vw, 40px) 0">
+    <p style="margin: 0 0 12px; font-family: Inter, sans-serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-400)">Round complete</p>
+    <h1 style="margin: 0; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: clamp(25px, 4.6vw, 34px); line-height: 1.5">{{ resultTitle }}</h1>
+    <p style="margin: 14px 0 0; font-size: 16px; line-height: 1.9; color: var(--color-neutral-400); max-width: 56ch">{{ resultSub }}</p>
+
+    <div class="card" style="margin-top: 26px; padding: 22px">
+      <dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 18px">
+        <div>
+          <dt style="font-family: Inter, sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 5px">Correct</dt>
+          <dd style="margin: 0; font-family: Inter, sans-serif; font-size: 28px; font-weight: 600; color: var(--color-accent-300)">{{ correctLabel }}</dd>
+        </div>
+        <div>
+          <dt style="font-family: Inter, sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 5px">Best run</dt>
+          <dd style="margin: 0; font-family: Inter, sans-serif; font-size: 28px; font-weight: 600; color: var(--color-neutral-200)">{{ bestStreak }}</dd>
+        </div>
+        <div>
+          <dt style="font-family: Inter, sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 5px">Your best</dt>
+          <dd style="margin: 0; font-family: Inter, sans-serif; font-size: 28px; font-weight: 600; color: var(--color-neutral-200)">{{ personalBest }}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px">
+      <button onClick="{{ startRound }}" class="btn btn-primary" style="font-family: inherit; font-size: 15.5px; cursor: pointer">Play again</button>
+      <button onClick="{{ shareResult }}" class="btn btn-secondary" style="font-family: inherit; font-size: 15.5px; cursor: pointer">{{ shareLabel }}</button>
+      <button onClick="{{ goHome }}" class="btn btn-ghost" style="font-family: inherit; font-size: 15.5px; cursor: pointer">Home</button>
+    </div>
+
+    <h2 style="margin: 38px 0 10px; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: 20px">ഈ റൗണ്ട് · This round</h2>
+    <div style="display: flex; flex-direction: column">
+      <sc-for list="{{ review }}" as="rv" hint-placeholder-count="6">
+        <div style="border-top: 1px solid var(--color-divider); padding: 14px 2px; display: flex; gap: 14px; align-items: baseline">
+          <span style="flex: none; font-family: Inter, sans-serif; font-size: 14px; color: {{ rv.color }}">{{ rv.mark }}</span>
+          <span style="min-width: 0">
+            <span style="display: block; font-size: 16px; line-height: 1.65; color: var(--color-neutral-200)">{{ rv.q }}</span>
+            <span style="display: block; font-family: Inter, sans-serif; font-size: 14px; line-height: 1.7; color: var(--color-neutral-500); margin-top: 3px">{{ rv.detail }}</span>
+          </span>
+        </div>
+      </sc-for>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- PROGRESS -->
+  <sc-if value="{{ isProgress }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 760px; margin: 0 auto; padding: clamp(30px, 5vw, 52px) clamp(18px, 4vw, 40px) 0">
+    <h1 style="margin: 0 0 8px; font-family: 'Noto Serif Malayalam', serif; font-weight: 500; font-size: clamp(24px, 4.4vw, 32px)">Progress</h1>
+    <p style="margin: 0 0 26px; font-size: 15.5px; line-height: 1.85; color: var(--color-neutral-500); max-width: 56ch">ഈ ഉപകരണത്തിൽ കളിച്ച റൗണ്ടുകൾ മാത്രം. ആരോടും താരതമ്യമില്ല. Only the rounds played on this device — no comparison with anyone else.</p>
+
+    <div class="card" style="padding: 20px; margin-bottom: 22px">
+      <dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 18px">
+        <div>
+          <dt style="font-family: Inter, sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 5px">Rounds</dt>
+          <dd style="margin: 0; font-family: Inter, sans-serif; font-size: 26px; font-weight: 600; color: var(--color-neutral-200)">{{ roundCount }}</dd>
+        </div>
+        <div>
+          <dt style="font-family: Inter, sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 5px">Best</dt>
+          <dd style="margin: 0; font-family: Inter, sans-serif; font-size: 26px; font-weight: 600; color: var(--color-accent-300)">{{ personalBest }}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <sc-if value="{{ historyEmpty }}" hint-placeholder-val="{{ false }}">
+      <p style="margin: 0; font-size: 15.5px; line-height: 1.85; color: var(--color-neutral-500)">ഇതുവരെ റൗണ്ടുകളില്ല. No rounds yet — play one and it will appear here.</p>
+    </sc-if>
+    <div style="display: flex; flex-direction: column">
+      <sc-for list="{{ history }}" as="h" hint-placeholder-count="0">
+        <div style="border-top: 1px solid var(--color-divider); padding: 13px 2px; display: flex; gap: 14px; align-items: baseline">
+          <span style="font-size: 15.5px; color: var(--color-neutral-300)">{{ h.when }}</span>
+          <span style="margin-left: auto; font-family: Inter, sans-serif; font-size: 16px; font-weight: 600; color: var(--color-accent-300)">{{ h.score }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <sc-if value="{{ hasHistory }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ clearHistory }}" class="btn btn-ghost" style="font-family: inherit; font-size: 14.5px; margin-top: 20px; cursor: pointer">{{ clearLabel }}</button>
+    </sc-if>
+  </main>
+  </sc-if>
+
+  <footer style="margin-top: 60px; padding: 20px clamp(18px, 4vw, 40px); border-top: 1px solid var(--color-divider)">
+    <div style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline">
+      <span style="font-size: 13.5px; color: var(--color-neutral-500)">ക്വിസ് തയ്യാറാക്കുന്നത്: മുജാഹിദ് അൽ ഹികമി പറവണ്ണ</span>
+      <span style="font-size: 13px; color: var(--color-neutral-600); flex: 1 1 220px; min-width: 0">ജാമിഅ അൽ ഹിന്ദ് അൽ ഇസ്‌ലാമിയ്യ – മിനി ഊട്ടി</span>
+      <a href="https://arabexinternational.com/techsolutions" target="_blank" rel="noopener" style="font-size: 13px; white-space: nowrap">Arabex Tech Solutions ↗</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 900, &quot;height&quot;: 900}}">
+const LETTERS = ["A", "B", "C", "D"];
+const PER_Q = 60;
+
+class Component extends DCLogic {
+  state = {
+    screen: "home", timed: true, deck: [], i: 0, picked: null, correct: 0,
+    streak: 0, bestStreak: 0, left: PER_Q, log: [], best: 0, history: [],
+    theme: "dark", shared: false, copied: false, cleared: false
+  };
+
+  componentDidMount() {
+    try {
+      const b = window.localStorage.getItem("jam-best");
+      const h = window.localStorage.getItem("jam-history");
+      const t = window.localStorage.getItem("jam-theme");
+      this.setState({ best: b ? Number(b) : 0, history: h ? JSON.parse(h) : [] });
+      if (t) this.applyTheme(t);
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  componentWillUnmount() { this.stop(); }
+
+  stop() { if (this.t) { window.clearInterval(this.t); this.t = null; } }
+
+  applyTheme(t) {
+    const root = window.document.documentElement;
+    if (t === "light") root.setAttribute("data-theme", "light");
+    else root.removeAttribute("data-theme");
+    this.setState({ theme: t });
+  }
+
+  bank() { return (window.__QUIZ || []).slice(); }
+
+  begin(timed) {
+    const deck = this.bank();
+    for (let i = deck.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const t = deck[i]; deck[i] = deck[j]; deck[j] = t;
+    }
+    this.stop();
+    this.setState({
+      screen: "play", timed: timed, deck: deck, i: 0, picked: null, correct: 0,
+      streak: 0, bestStreak: 0, left: PER_Q, log: [], shared: false, copied: false
+    });
+    window.scrollTo(0, 0);
+    if (!timed) return;
+    this.t = window.setInterval(() => {
+      const s = this.state;
+      if (s.screen !== "play" || !s.timed) return;
+      if (s.picked !== null) return;
+      if (s.left <= 1) { this.answer(-1); return; }
+      this.setState({ left: s.left - 1 });
+    }, 1000);
+  }
+
+  answer(idx) {
+    const s = this.state;
+    if (s.picked !== null) return;
+    const q = s.deck[s.i];
+    const right = idx === q.a;
+    const streak = right ? s.streak + 1 : 0;
+    this.setState({
+      picked: idx, correct: s.correct + (right ? 1 : 0), streak: streak,
+      bestStreak: Math.max(s.bestStreak, streak),
+      log: s.log.concat([{
+        q: q.q, right: right,
+        detail: (right ? "ശരി · Correct" : (idx === -1 ? "സമയം കഴിഞ്ഞു · Time up" : "ശരിയുത്തരം കാണുക")) +
+          " — " + q.o[q.a] + (idx > -1 && !right ? " (നിങ്ങൾ: " + q.o[idx] + ")" : "")
+      }])
+    });
+  }
+
+  finish() {
+    this.stop();
+    const s = this.state;
+    const best = Math.max(s.best, s.correct);
+    const row = { score: s.correct + "/" + s.deck.length, at: Date.now() };
+    const history = [row].concat(s.history).slice(0, 20);
+    try {
+      window.localStorage.setItem("jam-best", String(best));
+      window.localStorage.setItem("jam-history", JSON.stringify(history));
+    } catch (e) { /* ignore */ }
+    this.setState({ screen: "result", best: best, history: history });
+    window.scrollTo(0, 0);
+  }
+
+  go = (screen) => () => { this.stop(); this.setState({ screen: screen }); window.scrollTo(0, 0); };
+
+  renderVals() {
+    const st = this.state;
+    const total = st.deck.length;
+    const q = st.deck[st.i] || null;
+    const revealed = st.picked !== null;
+    const last = st.i >= total - 1;
+    const bank = this.bank();
+
+    const options = q ? q.o.map((text, k) => {
+      const isRight = k === q.a, isMine = k === st.picked;
+      let border = "var(--color-neutral-800)", bg = "var(--color-neutral-900)", fg = "var(--color-neutral-200)";
+      let mark = "", markColor = "transparent";
+      if (revealed && isRight) { border = "var(--ok)"; bg = "color-mix(in srgb, var(--ok) 15%, var(--color-neutral-900))"; mark = "✓"; markColor = "var(--ok)"; }
+      else if (revealed && isMine) { border = "var(--no)"; bg = "color-mix(in srgb, var(--no) 15%, var(--color-neutral-900))"; mark = "✕"; markColor = "var(--no)"; }
+      else if (revealed) { fg = "var(--color-neutral-400)"; }
+      return { letter: LETTERS[k], text: text, bg: bg, border: border, fg: fg, mark: mark, markColor: markColor, cursor: revealed ? "default" : "pointer", onPick: () => this.answer(k) };
+    }) : [];
+
+    const fmt = (ms) => { const d = new Date(ms); return d.getDate() + "/" + (d.getMonth() + 1) + "/" + String(d.getFullYear()).slice(2); };
+
+    return {
+      isHome: st.screen === "home",
+      isPlay: st.screen === "play",
+      isResult: st.screen === "result",
+      isProgress: st.screen === "progress",
+      navHomeColor: st.screen === "home" ? "var(--color-accent-300)" : "var(--color-neutral-400)",
+      navProgColor: st.screen === "progress" ? "var(--color-accent-300)" : "var(--color-neutral-400)",
+      themeLabel: st.theme === "light" ? "Dark" : "Light",
+      themeTitle: st.theme === "light" ? "Switch to dark" : "Switch to light",
+      toggleTheme: () => {
+        const next = st.theme === "light" ? "dark" : "light";
+        try { window.localStorage.setItem("jam-theme", next); } catch (e) { /* ignore */ }
+        this.applyTheme(next);
+      },
+
+      goHome: this.go("home"),
+      goProgress: this.go("progress"),
+      bankLabel: bank.length + " questions in the bank",
+      bestLabel: st.best ? "മികച്ചത് · Your best " + st.best + " correct" : "ആദ്യ റൗണ്ട് തുടങ്ങാം · No round yet",
+      startRound: () => this.begin(true),
+      startReview: () => this.begin(false),
+
+      timed: st.timed,
+      progressLabel: "Question " + (st.i + 1) + " / " + total,
+      tallyLabel: st.correct + " correct" + (st.streak > 1 ? " · " + st.streak + " in a row" : ""),
+      leaveRound: () => { if (st.log.length) this.finish(); else this.go("home")(); },
+      barWidth: Math.round(100 * Math.max(0, st.left) / PER_Q) + "%",
+      barColor: st.left <= 10 ? "var(--no)" : "var(--color-accent-500)",
+      qKicker: revealed ? "ഉത്തരം · Answer" : (st.timed ? Math.max(0, st.left) + "s" : "ചോദ്യം · Question") + (q ? " · Q" + q.no : ""),
+      qText: q ? q.q : "",
+      options: options,
+      revealed: revealed,
+      verdictLabel: st.picked === -1 ? "സമയം കഴിഞ്ഞു · Time up" : (q && st.picked === q.a ? "ശരി · Correct, മാശാ അല്ലാഹ്" : "ശരിയുത്തരം ഇതാണ് · Here is the answer"),
+      verdictColor: q && st.picked === q.a ? "var(--ok)" : "var(--color-accent-300)",
+      answerLine: q ? q.o[q.a] : "",
+      hasSource: !!(q && q.src),
+      sourceText: q ? q.src : "",
+      hasUrl: !!(q && q.url),
+      sourceUrl: q ? q.url : "",
+      nextLabel: last ? "Finish the round" : "Next question",
+      nextQ: () => {
+        if (last) { this.finish(); return; }
+        this.setState({ i: st.i + 1, picked: null, left: PER_Q, copied: false });
+        window.scrollTo(0, 0);
+      },
+      copyLabel: st.copied ? "Copied ✓" : "Copy this question",
+      copyQ: () => {
+        if (!q) return;
+        const txt = "Just a Minute Islamic Quiz\nQuestion " + q.no + "\n\n" + q.q + "\n" +
+          q.o.map((o, k) => LETTERS[k] + ") " + o).join("\n") +
+          "\n\nAnswer: " + q.o[q.a] + (q.src ? "\n\nഅവലംബം: " + q.src : "") + (q.url ? "\n" + q.url : "") +
+          "\n\nക്വിസ് തയ്യാറാക്കുന്നത്: മുജാഹിദ് അൽ ഹികമി പറവണ്ണ";
+        try { window.navigator.clipboard.writeText(txt); } catch (e) { /* ignore */ }
+        this.setState({ copied: true });
+      },
+
+      resultTitle: st.correct === total && total
+        ? "എല്ലാം ശരി · All correct, മാശാ അല്ലാഹ്"
+        : (st.correct >= Math.ceil(total * 0.6) ? "നല്ല റൗണ്ട് · A good round" : "പഠിക്കാൻ ഇനിയുമുണ്ട് · More to learn"),
+      resultSub: "ഉത്തരം തെറ്റിയവ വീണ്ടും വായിക്കുക; അവലംബങ്ങളാണ് യഥാർത്ഥ പ്രതിഫലം. Read the ones you missed again — the sources are the real reward.",
+      correctLabel: st.correct + " / " + total,
+      bestStreak: st.bestStreak,
+      personalBest: st.best,
+      review: st.log.map(r => ({ q: r.q, detail: r.detail, mark: r.right ? "✓" : "✕", color: r.right ? "var(--ok)" : "var(--no)" })),
+      shareLabel: st.shared ? "Copied ✓" : "Share result",
+      shareResult: () => {
+        const txt = "Just a Minute Islamic Quiz\n" + st.correct + " / " + total + " correct · best run " + st.bestStreak;
+        if (window.navigator.share) window.navigator.share({ text: txt });
+        else { try { window.navigator.clipboard.writeText(txt); } catch (e) { /* ignore */ } }
+        this.setState({ shared: true });
+      },
+
+      roundCount: st.history.length,
+      history: st.history.map(h => ({ when: fmt(h.at), score: h.score })),
+      historyEmpty: st.history.length === 0,
+      hasHistory: st.history.length > 0,
+      clearLabel: st.cleared ? "Cleared ✓" : "Clear history",
+      clearHistory: () => {
+        try { window.localStorage.setItem("jam-history", "[]"); } catch (e) { /* ignore */ }
+        this.setState({ history: [], cleared: true });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
